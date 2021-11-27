@@ -22,6 +22,6 @@
       "@/lib/*": ["src/lib/*"],
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "generators/plopfile.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.tsx", "*.ts", "generators/plopfile.js"],
   "exclude": ["node_modules"]
 }
