@@ -4,24 +4,25 @@
 ![Badge](https://img.shields.io/github/license/joao208/fe_personal_website)
 
 <h1>
-    <img src="images/Blog-1.gif">
+    <img src="images/Home.png">
 </h1>
 
 <h1>
-    <img src="images/Blog.gif">
+    <img src="images/Journey.png">
 </h1>
 
 <h1>
-    <img src="images/Home.gif">
+    <img src="images/Projects.png">
 </h1>
 
 <h1>
-    <img src="images/Journey.gif">
+    <img src="images/Blog-1.png">
 </h1>
 
 <h1>
-    <img src="images/Projects.gif">
+    <img src="images/Blog.png">
 </h1>
+
 
 ## 🚀 Tecnologias utilizadas
 
