@@ -22,7 +22,7 @@ const Home = () => {
             from scratch.
           </S.Paragraph>
           <S.ButtonContainer>
-            <Link href="/home" passHref>
+            <Link href="/" passHref>
               <S.ButtonGreen>Contact</S.ButtonGreen>
             </Link>
             <Link href="/projects" passHref>

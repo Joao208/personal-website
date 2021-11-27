@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Container } from '../home/styles'
+import { Container } from '../styles'
 import { Header } from '@/components/HeaderComponent'
 
 import * as S from './styles'

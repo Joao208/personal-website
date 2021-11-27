@@ -6,7 +6,7 @@ import { HeaderComponentInterface } from './components'
 export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute }) => {
   const children = (
     <div>
-      <Link href="/home" passHref>
+      <Link href="/" passHref>
         <S.ButtonHeader active={page === 'home'}>Home</S.ButtonHeader>
       </Link>
       <Link href="/projects" passHref>

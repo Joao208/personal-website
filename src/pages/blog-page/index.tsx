@@ -1,4 +1,4 @@
-import { Container } from '../home/styles'
+import { Container } from '../styles'
 import * as S from './styles'
 
 import ReactMarkdown from 'react-markdown'

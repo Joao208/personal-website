@@ -1,7 +1,7 @@
 import { Footer } from '@/components/FooterComponent'
 import { Header } from '@/components/HeaderComponent'
 import { projects } from 'src/constants/projects'
-import { Container } from '../home/styles'
+import { Container } from '../styles'
 import * as S from './styles'
 
 const Projects = () => {
