@@ -18,7 +18,6 @@ const Timeline = () => {
           </S.CardContainer>
         </Link>
       ))}
-      <S.Blur />
     </S.Wrapper>
   )
 }

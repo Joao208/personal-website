@@ -96,17 +96,3 @@ export const Time = styled.p`
     display: none;
   }
 `
-
-export const Blur = styled.div`
-  background: linear-gradient(359.77deg, rgba(0, 0, 0, 0.37) 0.2%, rgba(0, 0, 0, 0) 76.69%);
-
-  width: 100%;
-  height: 50px;
-
-  bottom: 0;
-  position: sticky;
-
-  @media (max-width: 800px) {
-    background: transparent;
-  }
-`
