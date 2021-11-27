@@ -6,16 +6,16 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import remarkGfm from 'remark-gfm'
 import { Header } from '@/components/HeaderComponent'
 import { useRouter } from 'next/router'
-import { Footer } from '@/components/FooterComponent'
-import { posts } from 'src/constants/posts'
+import { markdowns, posts } from 'src/constants/posts'
 
 const BlogPage = () => {
   const router = useRouter()
   const { pageId } = router.query
 
   const index = typeof pageId === 'string' && parseFloat(pageId ?? '0') - 1
+  const indexOf = typeof index === 'number' ? index : -1
 
-  const post = posts[index || -1]
+  const post = posts[indexOf]
 
   return (
     <>
@@ -42,10 +42,9 @@ const BlogPage = () => {
               },
             }}
           >
-            {post?.markdown}
+            {markdowns[indexOf]}
           </ReactMarkdown>
         </S.ContainerMarkdown>
-        <Footer />
       </Container>
     </>
   )

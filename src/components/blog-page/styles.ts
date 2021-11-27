@@ -11,8 +11,6 @@ export const Title = styled.p`
 
   color: #ffffff;
 
-  padding: 0 5px;
-
   width: 60%;
 
   @media (max-width: 800px) {
@@ -35,11 +33,21 @@ export const Subtitle = styled.p`
 
   margin-left: 50px;
   margin-bottom: 30px;
+
+  @media (max-width: 800px) {
+    width: auto;
+
+    margin-left: 20px;
+  }
 `
 
 export const ContainerMarkdown = styled.div`
   flex-flow: column;
   display: flex;
+
+  > * ::marker {
+    color: #fff;
+  }
 
   > * {
     color: #ffffff;

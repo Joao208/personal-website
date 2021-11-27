@@ -1,4 +1,3 @@
-import { Footer } from '@/components/FooterComponent'
 import { Header } from '@/components/HeaderComponent'
 import { projects } from 'src/constants/projects'
 import { Container } from '../../components/home/styles'
@@ -24,7 +23,6 @@ const Projects = () => {
             </a>
           ))}
         </S.FlexWrapper>
-        <Footer />
       </Container>
     </>
   )

@@ -4,7 +4,6 @@ import { Container } from '../../components/home/styles'
 import { Header } from '@/components/HeaderComponent'
 
 import * as S from '../../components/blog/styles'
-import { Footer } from '@/components/FooterComponent'
 import { posts } from 'src/constants/posts'
 
 const Blog = () => {
@@ -27,7 +26,6 @@ const Blog = () => {
             </Link>
           ))}
         </S.FlexWrapper>
-        <Footer />
       </Container>
     </>
   )

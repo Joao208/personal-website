@@ -70,7 +70,7 @@ export const CardDescription = styled.p`
 export const CardButton = styled.div``
 
 export const CardImage = styled.img`
-  height: 181.3px;
+  height: 80%;
 
   width: 100%;
   border-radius: 19px;
@@ -86,7 +86,6 @@ export const FlexWrapper = styled.div`
 
   gap: 20px;
   align-items: center;
-  justify-content: center;
   width: 100%;
 
   padding: 20px;

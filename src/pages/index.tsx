@@ -1,4 +1,3 @@
-import { Footer } from '@/components/FooterComponent'
 import { Header } from '@/components/HeaderComponent'
 import Link from 'next/link'
 
@@ -30,7 +29,6 @@ const Home = () => {
             </Link>
           </S.ButtonContainer>
         </S.Content>
-        <Footer />
       </S.Container>
     </>
   )
