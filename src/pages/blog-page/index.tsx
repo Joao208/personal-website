@@ -1,5 +1,5 @@
-import { Container } from '../styles'
-import * as S from './styles'
+import { Container } from '../../components/home/styles'
+import * as S from '../../components/blog-page/styles'
 
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'

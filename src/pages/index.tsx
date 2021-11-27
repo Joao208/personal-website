@@ -2,7 +2,7 @@ import { Footer } from '@/components/FooterComponent'
 import { Header } from '@/components/HeaderComponent'
 import Link from 'next/link'
 
-import * as S from './styles'
+import * as S from '../components/home/styles'
 
 const Home = () => {
   return (

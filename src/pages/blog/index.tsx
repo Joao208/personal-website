@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { Container } from '../styles'
+import { Container } from '../../components/home/styles'
 import { Header } from '@/components/HeaderComponent'
 
-import * as S from './styles'
+import * as S from '../../components/blog/styles'
 import { Footer } from '@/components/FooterComponent'
 import { posts } from 'src/constants/posts'
 

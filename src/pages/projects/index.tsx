@@ -1,8 +1,8 @@
 import { Footer } from '@/components/FooterComponent'
 import { Header } from '@/components/HeaderComponent'
 import { projects } from 'src/constants/projects'
-import { Container } from '../styles'
-import * as S from './styles'
+import { Container } from '../../components/home/styles'
+import * as S from '../../components/projects/styles'
 
 const Projects = () => {
   return (
