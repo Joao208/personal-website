@@ -1,55 +1,10 @@
-import styled, { css } from "styled-components";
-import Link from "next/link";
+import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: linear-gradient(
-    158.86deg,
-    #1c2a34 10.36%,
-    #111a20 49.58%,
-    #111a20 49.58%
-  );
+  background: linear-gradient(158.86deg, #1c2a34 10.36%, #111a20 49.58%, #111a20 49.58%);
   width: 100vw;
   min-height: 100vh;
-`;
-
-export const Header = styled.div`
-  display: flex;
-  justify-content: center;
-
-  padding-top: 20px;
-  width: 100%;
-
-  > div {
-    width: 50%;
-
-    display: flex;
-    justify-content: space-around;
-
-    @media (max-width: 800px) {
-      width: 100%;
-    }
-  }
-`;
-
-export const ButtonHeader = styled.div`
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-
-  text-align: center;
-
-  color: #ffffff;
-
-  cursor: pointer;
-
-  ${({ active }) =>
-    active &&
-    css`
-      border-bottom: 2px solid #fff;
-    `}
-`;
+`
 
 export const Image = styled.img`
   width: 470.97px;
@@ -65,10 +20,10 @@ export const Image = styled.img`
     top: -120px;
     left: -40px;
   }
-`;
+`
 
 export const Title = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 74.0596px;
@@ -83,10 +38,10 @@ export const Title = styled.p`
   @media (max-width: 517px) {
     font-size: 50px;
   }
-`;
+`
 
 export const Paragraph = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -104,7 +59,7 @@ export const Paragraph = styled.p`
       display: none;
     }
   }
-`;
+`
 
 export const ButtonGreen = styled.div`
   width: 130.76px;
@@ -117,21 +72,21 @@ export const ButtonGreen = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18.5149px;
   line-height: 23px;
   text-align: center;
 
-  cursor: pointer;
+  cursor: not-allowed;
 
   margin-right: 20px;
 
   @media only screen and (max-width: 378px) {
-    margin-bottom: 20px;
+    margin: 20px;
   }
-`;
+`
 
 export const ButtonGray = styled.div`
   width: 229.12px;
@@ -144,7 +99,7 @@ export const ButtonGray = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18.5149px;
@@ -154,25 +109,26 @@ export const ButtonGray = styled.div`
   cursor: pointer;
 
   color: #ffffff;
-`;
-
-export const Footer = styled.div``;
+`
 
 export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   position: absolute;
 
   flex-direction: column;
-`;
+`
 
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-around;
 
   flex-wrap: wrap;
-`;
+`
