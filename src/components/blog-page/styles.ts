@@ -45,6 +45,16 @@ export const ContainerMarkdown = styled.div`
   flex-flow: column;
   display: flex;
 
+  a {
+    color: rgb(176, 251, 188);
+    text-decoration: underline;
+  }
+
+  * {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+
   > * ::marker {
     color: #fff;
   }
