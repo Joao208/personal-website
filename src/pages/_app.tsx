@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <title>João Augusto</title>
         <link rel="shortcut icon" href="/static/favicon.ico" />
+        <meta name="theme-color" content="#1C2A34" media="(prefers-color-scheme: dark)" />
       </Head>
       <Component {...pageProps} />
     </>

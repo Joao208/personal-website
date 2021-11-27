@@ -76,7 +76,7 @@ export const ContainerMarkdown = styled.div`
     }
   }
 
-  max-width: 80%;
+  max-width: 70%;
 
   padding-left: 50px;
 
