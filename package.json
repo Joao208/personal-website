@@ -4,7 +4,7 @@
   "private": true,
   "license": "The MIT License (MIT)",
   "engines": {
-    "node": "14.17.0",
+    "node": "14.x",
     "vscode": "^1.22.0"
   },
   "repository": {
