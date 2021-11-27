@@ -38,6 +38,10 @@ export const Title = styled.p`
   @media (max-width: 517px) {
     font-size: 50px;
   }
+
+  @media (max-width: 400px) {
+    margin-top: 50%;
+  }
 `
 
 export const Paragraph = styled.p`
@@ -115,6 +119,11 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 400px) {
+    overflow-y: scroll;
+    padding: 20px;
+  }
 
   top: 0;
   bottom: 0;
