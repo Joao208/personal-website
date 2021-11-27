@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm'
 import { Header } from '@/components/HeaderComponent'
 import { useRouter } from 'next/router'
 import { markdowns, posts } from 'src/constants/posts'
+import Timeline from '@/components/timeline'
 
 const BlogPage = () => {
   const router = useRouter()
@@ -21,6 +22,7 @@ const BlogPage = () => {
     <>
       <Container>
         <Header page="blog-page" />
+        <Timeline />
         <S.Title>{post?.title}</S.Title>
         <S.Subtitle>{post?.subtitle}</S.Subtitle>
         <S.ContainerMarkdown>

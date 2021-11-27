@@ -4,8 +4,9 @@ export const posts = [
     subtitle:
       'Você já deve ter se feito essa pergunta várias vezes, ninguém tem a resposta 100% correta, mas sempre tem dicas, segue umas abaixo 👇',
     description: 'Você já deve ter se feito essa pergunta várias vezes, ninguém tem a resposta 100% correta...',
+    createdAt: new Date('2021-11-28'),
   },
-] as Array<{ title: string; description: string; markdown: string; subtitle: string }>
+] as Array<{ title: string; description: string; markdown: string; subtitle: string; createdAt: Date }>
 
 export const markdowns = [
   `
