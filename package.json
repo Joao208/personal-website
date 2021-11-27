@@ -2,6 +2,19 @@
   "name": "fe_personal_website",
   "version": "1.0.0",
   "private": true,
+  "license": "The MIT License (MIT)",
+  "engines": {
+    "node": "14.17.0",
+    "vscode": "^1.22.0"
+  },
+  "repository": {
+    "url": "https://github.com/Joao208/fe_personal_website"
+  },
+  "author": {
+    "name": "João Augusto",
+    "email": "augustoj311@gmail.com",
+    "url": "https://github.com/Joao208"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
