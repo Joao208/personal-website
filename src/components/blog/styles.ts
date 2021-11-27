@@ -88,5 +88,9 @@ export const FlexWrapper = styled.div`
   align-items: center;
   width: 100%;
 
-  padding: 20px;
+  padding: 20px 50px;
+
+  @media (max-width: 800px) {
+    padding: 20px;
+  }
 `
