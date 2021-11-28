@@ -38,10 +38,6 @@ export const Title = styled.p`
   @media (max-width: 517px) {
     font-size: 50px;
   }
-
-  @media (max-width: 400px) {
-    margin-top: 50%;
-  }
 `
 
 export const Paragraph = styled.p`
@@ -87,7 +83,7 @@ export const ButtonGreen = styled.div`
 
   margin-right: 20px;
 
-  @media only screen and (max-width: 378px) {
+  @media (max-width: 400px) {
     margin: 20px;
   }
 `
@@ -120,11 +116,6 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 400px) {
-    overflow-y: scroll;
-    padding: 20px;
-  }
-
   top: 0;
   bottom: 0;
   left: 0;
@@ -133,6 +124,16 @@ export const Content = styled.div`
   position: absolute;
 
   flex-direction: column;
+
+  @media (max-width: 400px) {
+    overflow-y: scroll;
+    padding: 20px;
+
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+  }
 `
 
 export const ButtonContainer = styled.div`
