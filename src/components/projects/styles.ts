@@ -68,7 +68,7 @@ export const CardDescription = styled.p`
 export const CardButton = styled.div``
 
 export const CardImage = styled.img`
-  width: 300px;
+  width: 211.71px;
   height: 181px;
 
   border-radius: 19px;
