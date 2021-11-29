@@ -2,7 +2,7 @@ export const projects = [
   {
     title: 'Express Http Redis',
     description:
-      'Biblioteca para auxiliar no cacheamento de informações com redis, através de middlewares que auxiliam no processo e diminuem o tempo das requisições',
+      'Biblioteca que auxilia o cacheamento de informações com Redis, através de middlewares que auxiliam o processo e diminuem o tempo das requisições',
     gitLink: 'https://github.com/Joao208/express-http-redis',
   },
   {
