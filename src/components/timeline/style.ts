@@ -52,6 +52,8 @@ export const Card = styled.div`
 
   padding: 10px;
 
+  height: 140px;
+
   cursor: pointer;
 
   @media (max-width: 800px) {
