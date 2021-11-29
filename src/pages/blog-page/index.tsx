@@ -24,7 +24,6 @@ const BlogPage = () => {
     <>
       <Head>
         <title>{post?.title ?? 'João Augusto'}</title>
-        <link rel="shortcut icon" href="/static/favicon.ico" />
         <meta name="description" content={post?.subtitle ?? `Hi! I'm João, come talking with me...`} />
       </Head>
       <Container>
