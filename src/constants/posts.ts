@@ -41,15 +41,15 @@ E aí mais algumas dicas:
   `
 ## O que é um Swagger?
 
-Você já deve ter visto sobre Swagger, Swagger é uma das ferramentas mais utilizadas para o desenvolvimento de OpenAPI Specification(OAS). Para documentações Swagger é uma ferramenta extremamente poderosa auxiliando desenvolvedores a documentar suas APIs de uma forma muito simples, Swagger consegue ler a estrutura e criar documentações automaticamente, e também fazer o oposto, lendo uma documentação e criando uma API.
- 
-Você pode gerar especificações como: operações da API, parâmetros da API, retorno, Autorizações necessárias manualmente, bem como gerar automaticamente através de comentários no código.
- 
+Você já deve ter visto sobre Swagger - uma das ferramentas mais utilizadas para o desenvolvimento de OpenAPI Specification(OAS). Para documentações Swagger é uma ferramenta extremamente poderosa, que auxilia desenvolvedores a documentar suas APIs de uma forma muito simples. O Swagger também consegue ler a estrutura e criar documentações automaticamente, assim como fazer o oposto: ler uma documentação e criar uma API.
+
+Você também pode gerar especificações como: operações da API, parâmetros da API, retorno e autorizações necessárias, seja de forma manual ou automática, através de comentários no código.
+
 Documentação [aqui](https://swagger.io/)
  
 E Hoje vamos ver como criar uma documentação através de comentários no código.
 
-Para começar vamos criar um projeto e iniciá-lo.
+Para começar vamos criar um projeto e iniciá-lo:
 
 ~~~shell
   mkdir swagger_app
@@ -57,13 +57,13 @@ Para começar vamos criar um projeto e iniciá-lo.
   yarn init -y
 ~~~
 
-Após dar iniciar o projeto vamos criar a pasta source do projeto e vamos instalar as bibliotecas iniciais:
+Após iniciar o projeto vamos criar a pasta source e instalar as bibliotecas iniciais:
 
 ~~~shell
 yarn add express cors http nodemon typescript @types/node ts-node express-promise-router @types/express @types/cors
 ~~~
 
-E criamos o arquivo root do projeto, nesse caso index.ts , vamos criar então a configuração básica do express, como no exemplo:
+E criamos o arquivo root do projeto, nesse caso, o index.ts. Após isso precisamos criar a configuração básica do express, como no exemplo:
 
 ~~~ts
 import express from "express";
@@ -102,7 +102,7 @@ routes.get("/users", (req, res) => {
 export { routes };
 ~~~
 
-Vamos criar os scripts para rodar o projeto
+E estes são os scripts para rodar o projeto:
 
 ~~~json
 "scripts": {
@@ -112,13 +112,13 @@ Vamos criar os scripts para rodar o projeto
 
 ## Configurando swagger
 
-Adicionando as bibliotecas necessárias
+Adicionando as bibliotecas necessárias:
 
 ~~~shell
 yarn add swagger-jsdoc swagger-ui-express @types/swagger-jsdoc @types/swagger-ui-express
 ~~~
 
-Com isso vamos inserir a configuração do swagger no root do projeto, vamos importar as duas bibliotecas que baixamos
+Com isso, vamos inserir a configuração do swagger no root do projeto. Depois é só importar as duas bibliotecas que baixamos:
 
 ~~~ts
 import swaggerUI from "swagger-ui-express";
@@ -146,9 +146,9 @@ const specs = swaggerJsDocs(options);
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs));
 ~~~
 
-Agora rode o projeto e acesse [http://localhost:5000/docs](http://localhost:5000/docs), dessa forma você vai ver a tela inicial do swagger que é construído automaticamente
- 
-Vamos então criar o nosso primeiro schema dentro de routes/index
+Agora rode o projeto e acesse [http://localhost:5000/docs](http://localhost:5000/docs), para você poder ver a tela inicial do swagger que é construído automaticamente.
+
+Vamos então criar o nosso primeiro schema dentro de routes/index:
 
 ~~~ts
 /**
@@ -172,7 +172,7 @@ Vamos então criar o nosso primeiro schema dentro de routes/index
  */
 ~~~
 
-Após isso já aparece os schemas que você criou, e então vamos finalmente documentar a nossa rota, adicionando as linhas
+Após isso os schemas que você criou já aparecem, aí finalmente pode documentar a nossa rota, adicionando as linhas:
 
 ~~~ts
 /**
@@ -193,6 +193,6 @@ Após isso já aparece os schemas que você criou, e então vamos finalmente doc
  */
 ~~~
 
-Dessa forma sua primeira rota foi documentada e prontinho, sua primeira documentação com swagger foi feita.
+Dessa forma, sua primeira documentação com swagger foi feita.
 `,
 ] as Array<string>
