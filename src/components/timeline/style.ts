@@ -56,6 +56,8 @@ export const Card = styled.div`
 
   cursor: pointer;
 
+  overflow: hidden;
+
   @media (max-width: 800px) {
     white-space: break-spaces;
 

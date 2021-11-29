@@ -12,6 +12,14 @@ export const posts = [
     description: 'Esse artigo tem a intenção de te auxiliar na documentação com swagger e expressjs...',
     createdAt: new Date('2021-11-29'),
   },
+  {
+    title: 'Socket.io',
+    subtitle:
+      'Você já precisou criar uma aplicação que precisasse de comunicação cliente-servidor em tempo real? Neste post, vamos te ajudar a fazer isso usando o framework Socket.IO, incluindo exemplos reais de casos de uso. Vamos lá?',
+    description:
+      'Socket.io é uma implementação em node para web socket, ou seja, uma forma de fazer comunicação em tempo real...',
+    createdAt: new Date('2021-11-30'),
+  },
 ] as Array<{ title: string; description: string; markdown: string; subtitle: string; createdAt: Date }>
 
 export const markdowns = [
@@ -194,5 +202,156 @@ Após isso os schemas que você criou já aparecem, aí finalmente pode document
 ~~~
 
 Dessa forma, sua primeira documentação com swagger foi feita.
+`,
+  `
+## O que é o Socket.io?
+
+Socket.io é um framework que auxilia na implementação de aplicações realtime, podendo ser usado no frontend e no backend, nesse artigo, vamos ver a implementação com ReactJs e NodeJs.
+
+O Socket.io também é muito fácil de escalar, como é em tempo real, o chamamos de io intensive, ou seja, acontece muito io quando estamos utilizando o mesmo.
+
+O Socket.io funciona basicamente com dois métodos: o de emitir e o de escutar. Ambos sempre recebem dois parâmetros, o evento e os dados. O evento de emitir é 'emit' e o de escutar e 'on', como no exemplo de emissão de uma mensagem:
+
+# NodeJS
+
+~~~ts
+socket?.emit('message', { message: 'Hello' })
+~~~
+
+Da mesma forma temos o exemplo recebendo a mensagem emitida acima:
+
+~~~ts
+socket?.on('message', (response) => console.log(response)) // { message: 'Hello' }
+~~~
+
+Agora que estamos mais situados, do que é Socket.io e como ele funciona, vamos a implementação:
+
+Primeiro vamos baixar as bibliotecas
+
+~~~shell
+yarn add socket.io express
+~~~
+
+Vamos então criar a estrutura básica do express:
+
+~~~ts
+const express = require('express');
+const http = require('http');
+
+const app = express();
+const server = http.createServer(app);
+
+app.get('/', (req, res) => {
+  res.send('Hello world!');
+});
+
+server.listen(3000, () => {
+  console.log('Server running in: 3000');
+});
+~~~
+
+Se acessarmos [http://localhost:3000](http://localhost:3000) teremos a mensagem: "Hello world!", agora vamos ouvir toda vez que um usuário se conectar:
+
+~~~ts
+const express = require('express');
+const http = require('http');
+const { Server } = require("socket.io");
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+
+app.get('/', (req, res) => {
+  res.send('Hello world!');
+});
+
+io.on('connection', (socket) => {
+  console.log('User connected');
+});
+
+server.listen(3000, () => {
+  console.log('Server running in: 3000');
+});
+~~~
+
+O interessante desse on 'connection', é que podemos usar para criar status do usuário "online" ou "offline" de um usuário, onde ao se conectar inserimos seu status como "online" e ao se descontar inserimos seu status como "offline", como no exemplo abaixo:
+
+~~~ts
+// User online
+io.on('connection', (socket) => {
+  console.log('User connected')
+
+  // User offline
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+~~~
+
+Então, vamos emitir uma mensagem toda vez que um usuário saiu por exemplo:
+
+~~~ts
+io.on('connection', (socket) => {
+  io.emit('message', 'Hi new user!')
+
+  socket.on('disconnect', () => {
+    io.emit('message', 'User desconnected')
+  });
+});
+~~~
+
+Assim temos todos os principais métodos a nível backend do Socket.io, mas caso queira conhecer mais, pode ver na documentação oficial [aqui](https://socket.io/docs/v4/server-installation/).
+
+# ReactJs
+
+Agora vamos para o React, onde o cliente vai ouvir essas atualizações em tempo real, porém como o socket trabalha com os dois lados, podemos enviar e receber mensagens de ambos os lados.
+
+Vamos instalar a bibliotecas necessárias
+
+~~~shell
+yarn add socket.io-client react
+~~~
+
+Para executar o evento assim que o componente for renderizado, podemos usar useEffect como no exemplo:
+
+~~~ts
+import socketio from "socket.io-client";
+
+const [messages, setMessages] = useState([])
+
+useEffect(() => {
+  async function SocketFunction() {
+    const socket = socketio("http://localhost:3000");
+
+    socket.on("message", (response) => {
+      setMessages([...messages, response])
+    });
+  }
+
+  SocketFunction();
+}, []);
+~~~
+
+Com esse trecho de código, conseguimos ouvir toda vez que uma mensagem for enviado no backend, ou até mesmo no frontend, e da mesma forma podemos enviar mensagemos para o backend com socket.emit:
+
+~~~ts
+const socket = socketio("http://localhost:3000");
+
+socket.emit("message", "Hello World!");
+~~~
+
+E por hoje ficamos por aqui, é realmente só isso a implementação com Socket.io, algo rápido e que possui basicamente 2 métodos principais, mas ao mesmo tempo é muito completa é poderosa, por isso vou deixar abaixo algumas referências que podem te ajudar com dúvidas populares
+
+Consigo enviar parâmetros de autorização de um usuário? Como token JWT, email, senha...
+
+Sim, conseguimos! [Aqui](https://stackoverflow.com/questions/13745519/send-custom-data-along-with-handshakedata-in-socket-io) você consegue ver como, usando handshake query.
+
+Consigo enviar uma mensagem somente para um usuário?
+
+Sim, inclusive consegue personalizar e enviar para todos menos para quem enviou entre outros, todos os principais métodos estão aqui: 
+
+* [https://socket.io/docs/v3/broadcasting-events/](https://socket.io/docs/v3/broadcasting-events/)
+* [https://socket.io/docs/v3/rooms/](https://socket.io/docs/v3/rooms/)
+* [https://socket.io/docs/v3/emit-cheatsheet/](https://socket.io/docs/v3/emit-cheatsheet/)
 `,
 ] as Array<string>
