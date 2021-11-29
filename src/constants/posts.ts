@@ -8,8 +8,8 @@ export const posts = [
   },
   {
     title: 'Swagger Express',
-    subtitle: 'Como usar express em seu aplicativo expressjs',
-    description: 'Esse artigo tem a intenção de te auxiliar na documentação com swagger e expressjs...',
+    subtitle: 'Como usar Swagger em seu aplicativo ExpressJS',
+    description: 'Esse artigo tem a intenção de te auxiliar na documentação com Swagger e expressjs...',
     createdAt: new Date('2021-11-29'),
   },
   {
@@ -24,7 +24,7 @@ export const posts = [
 
 export const markdowns = [
   `
-Em um momento da vida especificamente quando você está se formando sempre começam a te fazer perguntas como: "Iai, vai trabalhar onde?", "Vai fazer faculdade?", "Qual faculdade você vai fazer?"
+Você já deve ter visto sobre Swagger - uma das ferramentas mais utilizadas para o desenvolvimento de OpenAPI Specification(OAS). Para documentações, o Swagger é uma ferramenta extremamente poderosa, que auxilia desenvolvedores a documentar suas APIs de uma forma muito simples. O Swagger também consegue ler a estrutura e criar documentações automaticamente, assim como fazer o oposto: ler uma documentação e criar uma API.
 
 São perguntas extremamente comuns e muita das vezes os jovens não possuem a resposta, principalmente na área da tecnologia, temos diversos caminhos, diversas tecnologias, dentre diversas carreiras que dá pra seguir.
 
@@ -71,7 +71,7 @@ Após iniciar o projeto vamos criar a pasta source e instalar as bibliotecas ini
 yarn add express cors http nodemon typescript @types/node ts-node express-promise-router @types/express @types/cors
 ~~~
 
-E criamos o arquivo root do projeto, nesse caso, o index.ts. Após isso precisamos criar a configuração básica do express, como no exemplo:
+E criamos o arquivo root do projeto, nesse caso, o index.ts. Após isso, precisamos criar a configuração básica do express, como no exemplo
 
 ~~~ts
 import express from "express";
@@ -118,7 +118,7 @@ E estes são os scripts para rodar o projeto:
 },
 ~~~
 
-## Configurando swagger
+## Configurando Swagger
 
 Adicionando as bibliotecas necessárias:
 
@@ -126,7 +126,7 @@ Adicionando as bibliotecas necessárias:
 yarn add swagger-jsdoc swagger-ui-express @types/swagger-jsdoc @types/swagger-ui-express
 ~~~
 
-Com isso, vamos inserir a configuração do swagger no root do projeto. Depois é só importar as duas bibliotecas que baixamos:
+Com isso, vamos inserir a configuração do Swagger no root do projeto. Depois é só importar as duas bibliotecas que baixamos:
 
 ~~~ts
 import swaggerUI from "swagger-ui-express";
@@ -201,7 +201,7 @@ Após isso os schemas que você criou já aparecem, aí finalmente pode document
  */
 ~~~
 
-Dessa forma, sua primeira documentação com swagger foi feita.
+Dessa forma, sua primeira documentação com Swagger foi feita.
 `,
   `
 ## O que é o Socket.io?
