@@ -8,7 +8,7 @@ export const posts = [
   },
   {
     title: 'Swagger Express',
-    subtitle: 'Como usar express em seu aplicativo expressjs',
+    subtitle: 'Como usar Swagger em seu aplicativo ExpressJS',
     description: 'Esse artigo tem a intenção de te auxiliar na documentação com swagger e expressjs...',
     createdAt: new Date('2021-11-29'),
   },
