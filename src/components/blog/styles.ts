@@ -75,9 +75,7 @@ export const CardImage = styled.img`
   width: 100%;
   border-radius: 19px;
 
-  @media (max-width: 544px) {
-    object-fit: cover;
-  }
+  object-fit: cover;
 `
 
 export const FlexWrapper = styled.div`

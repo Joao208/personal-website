@@ -46,6 +46,12 @@ export const ContainerMarkdown = styled.div`
   flex-flow: column;
   display: flex;
 
+  * {
+    @media (color) {
+      background: transparent !important;
+    }
+  }
+
   a {
     color: rgb(176, 251, 188);
     text-decoration: underline;
