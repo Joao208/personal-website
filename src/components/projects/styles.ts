@@ -43,6 +43,8 @@ export const ContainerText = styled.div`
 
   height: 100%;
   padding: 5px 10px;
+
+  width: 80%;
 `
 
 export const CardTitle = styled.p`
