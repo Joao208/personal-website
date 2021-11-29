@@ -1,11 +1,13 @@
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+
 import { Container } from '../../components/home/styles'
 import * as S from '../../components/blog-page/styles'
 
-import ReactMarkdown from 'react-markdown'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import remarkGfm from 'remark-gfm'
 import { Header } from '@/components/HeaderComponent'
-import { useRouter } from 'next/router'
 import { markdowns, posts } from 'src/constants/posts'
 import Timeline from '@/components/timeline'
 
@@ -20,6 +22,11 @@ const BlogPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{post?.title ?? 'João Augusto'}</title>
+        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <meta name="description" content={post?.subtitle ?? `Hi! I'm João, come talking with me...`} />
+      </Head>
       <Container>
         <Header page="blog-page" />
         <Timeline />
