@@ -63,7 +63,7 @@ Após iniciar o projeto vamos criar a pasta source e instalar as bibliotecas ini
 yarn add express cors http nodemon typescript @types/node ts-node express-promise-router @types/express @types/cors
 ~~~
 
-E criamos o arquivo root do projeto, nesse caso, o index.ts. Após isso precisamos criar a configuração básica do express, como no exemplo:
+E criamos o arquivo root do projeto, nesse caso, o index.ts. Após isso, precisamos criar a configuração básica do express, como no exemplo
 
 ~~~ts
 import express from "express";
