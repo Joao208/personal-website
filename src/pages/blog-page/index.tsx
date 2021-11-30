@@ -16,7 +16,7 @@ const BlogPage = () => {
   const index = typeof pageId === 'string' && parseFloat(pageId ?? '0') - 1
   const indexOf = typeof index === 'number' ? index : -1
 
-  const post = posts[indexOf]
+  const post = [...posts].reverse()[indexOf]
 
   return (
     <>
@@ -44,7 +44,7 @@ const BlogPage = () => {
               },
             }}
           >
-            {markdowns[indexOf]}
+            {[...markdowns].reverse()[indexOf]}
           </ReactMarkdown>
         </S.ContainerMarkdown>
       </Container>

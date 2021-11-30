@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { CardInterface } from './components'
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -44,7 +45,11 @@ export const CardContainer = styled.div`
   display: inline-block;
 `
 
-export const Card = styled.div`
+const backgroundSelected = css`
+  background: #1c2c35;
+`
+
+export const Card = styled.div<CardInterface>`
   width: 220.44px;
 
   background: rgba(28, 44, 53, 0.37);
@@ -57,6 +62,8 @@ export const Card = styled.div`
   cursor: pointer;
 
   overflow: hidden;
+
+  ${({ selected }) => !selected && backgroundSelected}
 
   @media (max-width: 800px) {
     white-space: break-spaces;
