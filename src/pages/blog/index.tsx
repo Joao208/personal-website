@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { Container } from '../../components/home/styles'
 import { Header } from '@/components/HeaderComponent'
@@ -9,6 +10,10 @@ import { posts } from 'src/constants/posts'
 const Blog = () => {
   return (
     <>
+      <Head>
+        <title>João Augusto - Blog</title>
+        <meta name="description" content="Hi! I'm João, come talking with me..." />
+      </Head>
       <Container>
         <Header page="blog" />
         <S.Title>knowledge I want to pass on</S.Title>

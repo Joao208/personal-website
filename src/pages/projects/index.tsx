@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Header } from '@/components/HeaderComponent'
 import { projects } from 'src/constants/projects'
 import { Container } from '../../components/home/styles'
@@ -6,6 +8,10 @@ import * as S from '../../components/projects/styles'
 const Projects = () => {
   return (
     <>
+      <Head>
+        <title>João Augusto - Projetos</title>
+        <meta name="description" content="Hi! I'm João, come talking with me..." />
+      </Head>
       <Container>
         <Header page="projects" />
         <S.Title>What i’ve done</S.Title>
