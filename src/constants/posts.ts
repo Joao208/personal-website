@@ -40,11 +40,9 @@ Enfim não adiantou tentar estudar todas essas linguagens de programação se eu
 
 E aí mais algumas dicas:
 
-Você nunca vai precisar de dinheiro para aprender, sempre há boas soluções como youtube, stackoverflow, github entre outras ferramentas de aprendizagem grátis.
-
-Também é sempre bom pedir ajuda para pessoas que você conheça e já seja da área;
-
-Sempre dá pra usar soluções como o financiamento de cursos, para isso temos empresas como: [Provi](https://provi.com.br);
+- Você nunca vai precisar de dinheiro para aprender, sempre há boas soluções como youtube, stackoverflow, github entre outras ferramentas de aprendizagem grátis.
+- Também é sempre bom pedir ajuda para pessoas que você conheça e já seja da área;
+- Sempre dá pra usar soluções como o financiamento de cursos, para isso temos empresas como: [Provi](https://provi.com.br);
 `,
   `
 ## O que é um Swagger?
@@ -250,7 +248,7 @@ server.listen(3000, () => {
 });
 ~~~
 
-Se acessarmos [http://localhost:3000](http://localhost:3000) teremos a mensagem: "Hello world!", agora vamos ouvir toda vez que um usuário se conectar:
+Se acessarmos [http://localhost:3000](http://localhost:3000) teremos a mensagem "Hello world!". E para recebermos essa mensagem toda vez que um usuário se conectar, faremos o seguinte:
 
 ~~~ts
 const express = require('express');
@@ -274,7 +272,7 @@ server.listen(3000, () => {
 });
 ~~~
 
-O interessante desse on 'connection', é que podemos usar para criar status do usuário "online" ou "offline" de um usuário, onde ao se conectar inserimos seu status como "online" e ao se descontar inserimos seu status como "offline", como no exemplo abaixo:
+O interessante desse on 'connection' é que podemos usá-lo para criar os status "online" ou "offline" de um usuário. Quando ele se conectar inserimos seu status como "online", já ao se desconectar inserimos seu status como "offline", como no exemplo abaixo:
 
 ~~~ts
 // User online
@@ -288,7 +286,7 @@ io.on('connection', (socket) => {
 });
 ~~~
 
-Então, vamos emitir uma mensagem toda vez que um usuário saiu por exemplo:
+Então, vamos emitir uma mensagem toda vez que um usuário sair, por exemplo:
 
 ~~~ts
 io.on('connection', (socket) => {
@@ -300,19 +298,19 @@ io.on('connection', (socket) => {
 });
 ~~~
 
-Assim temos todos os principais métodos a nível backend do Socket.io, mas caso queira conhecer mais, pode ver na documentação oficial [aqui](https://socket.io/docs/v4/server-installation/).
+Assim, temos todos os principais métodos a nível backend do Socket.io, mas caso queira conhecer mais, pode ver na documentação oficial [aqui](https://socket.io/docs/v4/server-installation/).
 
 # ReactJs
 
-Agora vamos para o React, onde o cliente vai ouvir essas atualizações em tempo real, porém como o socket trabalha com os dois lados, podemos enviar e receber mensagens de ambos os lados.
+Agora vamos para o React, onde o cliente vai ouvir essas atualizações em tempo real, apesar de podermos enviar e receber mensagens de ambos os lados, já que o socket trabalha com os dois.
 
-Vamos instalar a bibliotecas necessárias
+Vamos instalar a bibliotecas necessárias:
 
 ~~~shell
 yarn add socket.io-client react
 ~~~
 
-Para executar o evento assim que o componente for renderizado, podemos usar useEffect como no exemplo:
+Para executar o evento assim que o componente for renderizado, podemos usar o useEffect, como no exemplo:
 
 ~~~ts
 import socketio from "socket.io-client";
@@ -332,7 +330,7 @@ useEffect(() => {
 }, []);
 ~~~
 
-Com esse trecho de código, conseguimos ouvir toda vez que uma mensagem for enviado no backend, ou até mesmo no frontend, e da mesma forma podemos enviar mensagemos para o backend com socket.emit:
+Com esse trecho de código, conseguiremos ouvir toda vez que uma mensagem for enviada no backend (ou frontend), assim como podemos enviar mensagemos para o backend com socket.emit:
 
 ~~~ts
 const socket = socketio("http://localhost:3000");
@@ -340,15 +338,17 @@ const socket = socketio("http://localhost:3000");
 socket.emit("message", "Hello World!");
 ~~~
 
-E por hoje ficamos por aqui, é realmente só isso a implementação com Socket.io, algo rápido e que possui basicamente 2 métodos principais, mas ao mesmo tempo é muito completa é poderosa, por isso vou deixar abaixo algumas referências que podem te ajudar com dúvidas populares
+Viu como é fácil? Em apenas alguns minutos a implementação do Socket.io foi concluída - uma ferramenta muito completa e poderosa.
+
+Caso tenha alguma dúvida, abaixo estarão links para responder as perguntas mais comuns sobre o assunto:
 
 Consigo enviar parâmetros de autorização de um usuário? Como token JWT, email, senha...
 
-Sim, conseguimos! [Aqui](https://stackoverflow.com/questions/13745519/send-custom-data-along-with-handshakedata-in-socket-io) você consegue ver como, usando handshake query.
+Sim, conseguimos! [Aqui](https://stackoverflow.com/questions/13745519/send-custom-data-along-with-handshakedata-in-socket-io) você consegue ver como fazer isso, usando handshake query.
 
 Consigo enviar uma mensagem somente para um usuário?
 
-Sim, inclusive consegue personalizar e enviar para todos menos para quem enviou entre outros, todos os principais métodos estão aqui: 
+Sim, inclusive consegue personalizar e enviar para todos, exceto para quem já enviu antes. Todos os principais métodos estão aqui:
 
 * [https://socket.io/docs/v3/broadcasting-events/](https://socket.io/docs/v3/broadcasting-events/)
 * [https://socket.io/docs/v3/rooms/](https://socket.io/docs/v3/rooms/)
