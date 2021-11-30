@@ -13,7 +13,7 @@ const Blog = () => {
         <Header page="blog" />
         <S.Title>knowledge I want to pass on</S.Title>
         <S.FlexWrapper>
-          {posts.map(({ title, description }, index) => (
+          {[...posts].reverse().map(({ title, description }, index) => (
             <Link key={index} href={`/blog-page?pageId=${index + 1}`} passHref>
               <S.Card>
                 <S.CardImage src={`/blogCards/blogCard${index + 1}.png`} />
