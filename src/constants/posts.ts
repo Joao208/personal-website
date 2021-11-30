@@ -2,7 +2,7 @@ export const posts = [
   {
     title: 'Que rumo vou seguir?',
     subtitle:
-      'Você já deve ter se feito essa pergunta várias vezes, ninguém tem a resposta 100% correta, mas sempre tem dicas, segue umas abaixo 👇',
+      'Você já deve ter feito essa pergunta para sí mesmo várias vezes e apesar de ninguém ter a resposta 100% correta, abaixo eu deixei algumas dicas 👇',
     description: 'Você já deve ter se feito essa pergunta várias vezes, ninguém tem a resposta 100% correta...',
     createdAt: new Date('2021-11-28'),
   },
@@ -24,25 +24,21 @@ export const posts = [
 
 export const markdowns = [
   `
-Você já deve ter visto sobre Swagger - uma das ferramentas mais utilizadas para o desenvolvimento de OpenAPI Specification(OAS). Para documentações, o Swagger é uma ferramenta extremamente poderosa, que auxilia desenvolvedores a documentar suas APIs de uma forma muito simples. O Swagger também consegue ler a estrutura e criar documentações automaticamente, assim como fazer o oposto: ler uma documentação e criar uma API.
+Em um momento da vida, especificamente quando você está se formando, sempre começam a te fazer perguntas como: "Iai, vai trabalhar onde?", "Vai fazer faculdade?", "Qual faculdade você vai fazer?". Essas são perguntas extremamente comuns e muitas vezes os jovens não possuem a resposta, graças às inúmeras possibilidades que podemos escolher. Na área da tecnologia, por exemplo, temos diversos carreiras e tecnologias que podemos seguir, e a única pergunta que fica é "o que devo escolher?".
 
-São perguntas extremamente comuns e muita das vezes os jovens não possuem a resposta, principalmente na área da tecnologia, temos diversos caminhos, diversas tecnologias, dentre diversas carreiras que dá pra seguir.
+Eu não escapei desse processo; quando eu decidi que queria traçar uma carreira da área da tecnologia, tive dúvidas sobre qual profissão me dedicar. Depois de estudar mais sobre as possibilidades, vi que o melhor para minhas habilidades seria engenharia de software, mas aí me fiz mais uma pergunta: qual linguagem aprender?
 
-E eu não escapei desse processo, quando eu decidi que queria traçar a carreira de tecnologia, tive problemas em qual profissão me dedicaria, mas depois de estudar mais sobre as possibilidades, vi que o melhor para minhas habilidades seria engenharia de software, mas ai, me fiz mais uma duvida, qual linguagem?
+Após entender o que era ser um engenheiro de software eu precisava escolher uma linguagem de programação que atendesse os requisitos que eu precisava na época e, sem foco, eu comecei a estudar PHP, Python, Html, Css e Javascript - e isso foi o que me atrasou. Com a experiência que vivi, aqui está uma dica que pode te ajudar bastante:
 
-Após entender o que era ser um engenheiro de software eu precisava escolher uma linguagem de programação que atendesse os requisitos que eu precisava na época, e sem foco, eu comecei a estudar PHP, Python, Html, Css, Javascript.
-
-Por isso aqui está uma dica que pode te ajudar bastante:
-
-* Foque em 1 coisa de cada vez, não adianta você querer aprender tudo de uma vez que você não vai conseguir, porém se você focar em apenas uma coisa e tente ser o melhor naquilo. 
+* Foque em uma coisa de cada vez, não adianta você querer aprender tudo de uma vez e não conseguir aprender nada, o único caminho é focar em apenas uma coisa e dar o seu melhor.
 
 Enfim não adiantou tentar estudar todas essas linguagens de programação se eu não estava focado, após ver um anúncio de uma escola de programação, resolvi fazer o desafio  que era um desafio de 1 semana codando em javascript usando os frameworks react-native, reactjs e nodejs. Mas aí o problema veio novamente, após o final de semana, o curso mais completo que eu precisaria para dar um up na minha carreira era pago e custava R$1900,00 que eu não tinha na época.
 
-E aí mais algumas dicas:
+E aqui vão mais algumas dicas:
 
-- Você nunca vai precisar de dinheiro para aprender, sempre há boas soluções como youtube, stackoverflow, github entre outras ferramentas de aprendizagem grátis.
-- Também é sempre bom pedir ajuda para pessoas que você conheça e já seja da área;
-- Sempre dá pra usar soluções como o financiamento de cursos, para isso temos empresas como: [Provi](https://provi.com.br);
+- Você nunca vai precisar de dinheiro para aprender, pois sempre há boas soluções como: YouTube, Stack Overflow, Github e entre outras ferramentas de aprendizagem grátis.
+- Caso não queira soluções de aprendizagem grátis, sempre dá pra usar soluções como o financiamento de cursos, oferecido ppr empresas como a [Provi](https://provi.com.br);
+- Também é sempre bom pedir ajuda para pessoas que você conheça e já sejam da área.;
 `,
   `
 ## O que é um Swagger?
@@ -89,8 +85,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 server.listen(port, () => {
-  console.log('We are live on \${port}/');
-  console.log('Environment: production');
+  console.log("We are live on \${port}/");
+  console.log("Environment: production");
 });
 ~~~
 
@@ -206,18 +202,18 @@ Dessa forma, sua primeira documentação com Swagger foi feita.
 
 Socket.io é um framework que auxilia na implementação do realtime em aplicações, podendo ser usado no frontend e no backend. Neste artigo, iremos ver a implementação com ReactJs e NodeJs.
 
-O Socket.io também é muito fácil de escalar e, como é em tempo real, o chamamos de io intensive, ou seja, acontece muito io quando estamos utilizando o mesmo.
+O Socket.io também é muito fácil de escalar e, como é em tempo real, o chamamos de "io intensive", ou seja, acontece muito io quando estamos utilizando o mesmo.
 
-O Socket.io funciona basicamente com os métodos emitir e escutar. Ambos sempre recebem dois parâmetros: o evento e os dados. O evento de emitir é 'emit' e o de escutar é 'on'. Veja um exemplo de emissão de uma mensagem:
+O Socket.io funciona basicamente com os métodos emitir e escutar. Ambos sempre recebem dois parâmetros: o evento e os dados. O evento de emitir é "emit" e o de escutar é "on". Veja um exemplo de emissão de uma mensagem:
 
 ~~~ts
-socket?.emit('message', { message: 'Hello' })
+socket?.emit("message", { message: "Hello" })
 ~~~
 
 Da mesma forma temos o exemplo de recebimento da mensagem emitida acima:
 
 ~~~ts
-socket?.on('message', (response) => console.log(response)) // { message: 'Hello' }
+socket?.on("message", (response) => console.log(response)) // { message: "Hello" }
 ~~~
 
 # NodeJS
@@ -233,55 +229,55 @@ yarn add socket.io express
 E então criar a estrutura básica do Express:
 
 ~~~ts
-const express = require('express');
-const http = require('http');
+const express = require("express");
+const http = require("http");
 
 const app = express();
 const server = http.createServer(app);
 
-app.get('/', (req, res) => {
-  res.send('Hello world!');
+app.get("/", (req, res) => {
+  res.send("Hello world!");
 });
 
 server.listen(3000, () => {
-  console.log('Server running in: 3000');
+  console.log("Server running in: 3000");
 });
 ~~~
 
 Se acessarmos [http://localhost:3000](http://localhost:3000) teremos a mensagem "Hello world!". E para recebermos essa mensagem toda vez que um usuário se conectar, faremos o seguinte:
 
 ~~~ts
-const express = require('express');
-const http = require('http');
+const express = require("express");
+const http = require("http");
 const { Server } = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.get('/', (req, res) => {
-  res.send('Hello world!');
+app.get("/", (req, res) => {
+  res.send("Hello world!");
 });
 
-io.on('connection', (socket) => {
-  console.log('User connected');
+io.on("connection", (socket) => {
+  console.log("User connected");
 });
 
 server.listen(3000, () => {
-  console.log('Server running in: 3000');
+  console.log("Server running in: 3000");
 });
 ~~~
 
-O interessante desse on 'connection' é que podemos usá-lo para criar os status "online" ou "offline" de um usuário. Quando ele se conectar inserimos seu status como "online", já ao se desconectar inserimos seu status como "offline", como no exemplo abaixo:
+O interessante desse on "connection" é que podemos usá-lo para criar os status "online" ou "offline" de um usuário. Quando ele se conectar inserimos seu status como "online", já ao se desconectar inserimos seu status como "offline", como no exemplo abaixo:
 
 ~~~ts
 // User online
-io.on('connection', (socket) => {
-  console.log('User connected')
+io.on("connection", (socket) => {
+  console.log("User connected")
 
   // User offline
-  socket.on('disconnect', () => {
-    console.log('User disconnected');
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
   });
 });
 ~~~
@@ -289,11 +285,11 @@ io.on('connection', (socket) => {
 Então, vamos emitir uma mensagem toda vez que um usuário sair, por exemplo:
 
 ~~~ts
-io.on('connection', (socket) => {
-  io.emit('message', 'Hi new user!')
+io.on("connection", (socket) => {
+  io.emit("message", "Hi new user!")
 
-  socket.on('disconnect', () => {
-    io.emit('message', 'User desconnected')
+  socket.on("disconnect", () => {
+    io.emit("message", "User desconnected")
   });
 });
 ~~~
