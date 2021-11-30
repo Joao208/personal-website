@@ -46,6 +46,14 @@ export const ContainerMarkdown = styled.div`
   flex-flow: column;
   display: flex;
 
+  hr {
+    width: 100%;
+  }
+
+  ul {
+    list-style: inside;
+  }
+
   * {
     @media (color) {
       background: transparent !important;

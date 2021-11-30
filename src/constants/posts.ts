@@ -40,11 +40,11 @@ Enfim não adiantou tentar estudar todas essas linguagens de programação se eu
 
 E aí mais algumas dicas:
 
-* Você nunca vai precisar de dinheiro para aprender, sempre há boas soluções como youtube, stackoverflow, github entre outras ferramentas de aprendizagem grátis.
+Você nunca vai precisar de dinheiro para aprender, sempre há boas soluções como youtube, stackoverflow, github entre outras ferramentas de aprendizagem grátis.
 
-* Também é sempre bom pedir ajuda para pessoas que você conheça e já seja da área.
+Também é sempre bom pedir ajuda para pessoas que você conheça e já seja da área;
 
-* Sempre dá pra usar soluções como o financiamento de cursos, para isso temos empresas como: [Provi](https://provi.com.br)  
+Sempre dá pra usar soluções como o financiamento de cursos, para isso temos empresas como: [Provi](https://provi.com.br);
 `,
   `
 ## O que é um Swagger?
