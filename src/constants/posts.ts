@@ -344,11 +344,11 @@ Caso tenha alguma dúvida, abaixo estarão links para responder as perguntas mai
 
 Consigo enviar parâmetros de autorização de um usuário? Como token JWT, email, senha...
 
-Sim, conseguimos! [Aqui](https://stackoverflow.com/questions/13745519/send-custom-data-along-with-handshakedata-in-socket-io) você consegue ver como fazer isso, usando handshake query.
+> _Sim, conseguimos! [Aqui](https://stackoverflow.com/questions/13745519/send-custom-data-along-with-handshakedata-in-socket-io) você consegue ver como fazer isso, usando handshake query._
 
 Consigo enviar uma mensagem somente para um usuário?
 
-Sim, inclusive consegue personalizar e enviar para todos, exceto para quem já enviu antes. Todos os principais métodos estão aqui:
+> _Sim, é possível enviar uma mensagem para um único usuário e, além disso, depois você também pode enviar uma mensagem para todos os usuários e impedir que aqueles que já receberam a mensagem antes não a recebam novamente. Todos os principais métodos relacionados a isso se encontram aqui:_
 
 * [https://socket.io/docs/v3/broadcasting-events/](https://socket.io/docs/v3/broadcasting-events/)
 * [https://socket.io/docs/v3/rooms/](https://socket.io/docs/v3/rooms/)
