@@ -206,33 +206,33 @@ Dessa forma, sua primeira documentação com Swagger foi feita.
   `
 ## O que é o Socket.io?
 
-Socket.io é um framework que auxilia na implementação de aplicações realtime, podendo ser usado no frontend e no backend, nesse artigo, vamos ver a implementação com ReactJs e NodeJs.
+Socket.io é um framework que auxilia na implementação do realtime em aplicações, podendo ser usado no frontend e no backend. Neste artigo, iremos ver a implementação com ReactJs e NodeJs.
 
-O Socket.io também é muito fácil de escalar, como é em tempo real, o chamamos de io intensive, ou seja, acontece muito io quando estamos utilizando o mesmo.
+O Socket.io também é muito fácil de escalar e, como é em tempo real, o chamamos de io intensive, ou seja, acontece muito io quando estamos utilizando o mesmo.
 
-O Socket.io funciona basicamente com dois métodos: o de emitir e o de escutar. Ambos sempre recebem dois parâmetros, o evento e os dados. O evento de emitir é 'emit' e o de escutar e 'on', como no exemplo de emissão de uma mensagem:
-
-# NodeJS
+O Socket.io funciona basicamente com os métodos emitir e escutar. Ambos sempre recebem dois parâmetros: o evento e os dados. O evento de emitir é 'emit' e o de escutar é 'on'. Veja um exemplo de emissão de uma mensagem:
 
 ~~~ts
 socket?.emit('message', { message: 'Hello' })
 ~~~
 
-Da mesma forma temos o exemplo recebendo a mensagem emitida acima:
+Da mesma forma temos o exemplo de recebimento da mensagem emitida acima:
 
 ~~~ts
 socket?.on('message', (response) => console.log(response)) // { message: 'Hello' }
 ~~~
 
-Agora que estamos mais situados, do que é Socket.io e como ele funciona, vamos a implementação:
+# NodeJS
 
-Primeiro vamos baixar as bibliotecas
+Agora que sabemos o que é o Socket.io e como ele funciona, vamos fazer a implementação.
+
+O primeiro passo é baixar as bibliotecas:
 
 ~~~shell
 yarn add socket.io express
 ~~~
 
-Vamos então criar a estrutura básica do express:
+E então criar a estrutura básica do Express:
 
 ~~~ts
 const express = require('express');
