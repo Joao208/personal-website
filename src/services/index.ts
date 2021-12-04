@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'http://localhost:5001',
+  baseURL: 'https://bk-personal-website.onrender.com',
   timeout: 30000,
 })
 
