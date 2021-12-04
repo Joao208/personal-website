@@ -16,7 +16,7 @@ export const Container = styled.div`
   justify-content: center;
 
   > svg {
-    animation: lds-dual-ring 1s linear infinite;
+    animation: lds-dual-ring 0.8s linear infinite;
 
     @keyframes lds-dual-ring {
       0% {
