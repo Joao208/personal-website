@@ -6,23 +6,54 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import remarkGfm from 'remark-gfm'
 import { Header } from '@/components/HeaderComponent'
 import { useRouter } from 'next/router'
-import { markdowns, posts } from 'src/constants/posts'
 import Timeline from '@/components/timeline'
+import { useEffect, useState } from 'react'
+import { getPosts } from 'src/services'
+import { Loading } from '@/components/Loading'
+import { Footer } from '@/components/footer'
+
+interface PostInterface {
+  title: string
+  description: string
+  markdown: string
+  subtitle: string
+}
 
 const BlogPage = () => {
   const router = useRouter()
+  const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '' })
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [showSubscribe, setShowSubscribe] = useState(false)
+
   const { pageId } = router.query
 
-  const index = typeof pageId === 'string' && parseFloat(pageId ?? '0') - 1
-  const indexOf = typeof index === 'number' ? index : -1
+  useEffect(() => {
+    const loadPosts = async () => {
+      setLoading(true)
+      const response = await getPosts(pageId)
+      const allPosts = await getPosts()
 
-  const post = [...posts].reverse()[indexOf]
+      setPost(response)
+      setPosts(allPosts)
+      setLoading(false)
+
+      if (!localStorage.getItem('already_subscribed')) {
+        setTimeout(() => {
+          setShowSubscribe(true)
+        }, 300)
+      }
+    }
+
+    loadPosts()
+  }, [pageId])
 
   return (
     <>
+      {loading && <Loading />}
       <Container>
         <Header page="blog-page" />
-        <Timeline />
+        <Timeline posts={posts} />
         <S.Title>{post?.title}</S.Title>
         <S.Subtitle>{post?.subtitle}</S.Subtitle>
         <S.ContainerMarkdown>
@@ -44,10 +75,17 @@ const BlogPage = () => {
               },
             }}
           >
-            {[...markdowns].reverse()[indexOf]}
+            {post.markdown}
           </ReactMarkdown>
         </S.ContainerMarkdown>
       </Container>
+      <Footer
+        display={showSubscribe}
+        onClickOutside={() => {
+          setShowSubscribe(false)
+          localStorage.setItem('already_subscribed', 'true')
+        }}
+      />
     </>
   )
 }
