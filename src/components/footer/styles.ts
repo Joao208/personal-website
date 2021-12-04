@@ -12,6 +12,8 @@ export const ContainerOutSide = styled.div<ContainerInterface>`
 
   ${({ display }) => !display && invisible}
 
+  background: rgba(0, 0, 0, 0.5);
+
   bottom: 0;
   right: 0;
   left: 0;
@@ -30,8 +32,6 @@ export const Container = styled.div<ContainerInterface>`
   bottom: 0;
   left: 0;
   right: 0;
-
-  transition: 5s;
 
   animation-duration: 1.5s;
   animation-name: slidein;
@@ -60,6 +60,14 @@ export const Container = styled.div<ContainerInterface>`
 
     justify-content: center;
     align-items: center;
+  }
+
+  @media (max-width: 360px) {
+    height: 70%;
+  }
+
+  @media (max-width: 320px) {
+    height: 80%;
   }
 `
 export const Title = styled.p`
