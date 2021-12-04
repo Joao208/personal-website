@@ -1,23 +1,22 @@
+import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { posts } from 'src/constants/posts'
 import * as S from './style'
+import { TimelineInterface } from './components'
 
-const Timeline = () => {
+const Timeline: React.FC<TimelineInterface> = ({ posts }) => {
   const router = useRouter()
   const { pageId } = router.query
 
-  const index = typeof pageId === 'string' && parseFloat(pageId ?? '0')
-
   return (
     <S.Wrapper>
-      {[...posts].reverse().map(({ createdAt, title, description }, ind) => (
-        <Link key={ind} href={`/blog-page?pageId=${ind + 1}`} passHref>
+      {[...posts].reverse().map(({ createdAt, title, description, id }) => (
+        <Link key={id} href={`/blog-page?pageId=${id}`} passHref>
           <S.CardContainer>
             <S.Time>{moment(createdAt).format('LL')}</S.Time>
-            <S.Card selected={ind + 1 == index}>
+            <S.Card selected={id == pageId}>
               <S.CardTitle>{title}</S.CardTitle>
               <S.Description>{description}</S.Description>
             </S.Card>
