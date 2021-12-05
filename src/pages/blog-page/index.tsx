@@ -73,7 +73,8 @@ const BlogPage = () => {
             {post?.markdown}
           </ReactMarkdown>
         </S.ContainerMarkdown>
-        <Footer />
+        {/* <Reactions /> */}
+        <Footer loadingGlobal={loading} />
       </Container>
     </>
   )

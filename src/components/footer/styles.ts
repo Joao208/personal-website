@@ -1,10 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface ButtonInterface {
+  loading: boolean
+}
+
+const loadingCss = css`
+  background: #ddd;
+  cursor: not-allowed;
+`
 
 export const Container = styled.div`
   background: transparent;
   height: 300px;
-
-  z-index: 100;
 
   padding: 20px;
 
@@ -84,7 +91,7 @@ export const Input = styled.input`
   }
 `
 
-export const Button = styled.div`
+export const Button = styled.div<ButtonInterface>`
   width: 159px;
   height: 57px;
 
@@ -105,4 +112,6 @@ export const Button = styled.div`
   cursor: pointer;
 
   color: #000000;
+
+  ${({ loading }) => loading && loadingCss}
 `

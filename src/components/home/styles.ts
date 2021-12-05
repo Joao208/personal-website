@@ -65,7 +65,7 @@ export const ButtonGreen = styled.div`
   width: 130.76px;
   height: 56.7px;
 
-  background: #b0fbbc;
+  background: #ddd;
   border-radius: 8px;
 
   display: flex;

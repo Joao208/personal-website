@@ -28,12 +28,7 @@ export const getProjects = async (lang: string) => {
 }
 
 export const newSubscription = async (email: string) => {
-  try {
-    const response = await api.post(`/emails`, { email })
+  const response = await api.post(`/emails`, { email })
 
-    return response?.data
-  } catch (error) {
-    console.log(error)
-    return []
-  }
+  return response?.data
 }
