@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="João Augusto" />
         <meta
           property="og:image"
-          content="https://bk-personal-website.onrender.com/files/5b12e789859c8501bc9f97fe454b7b27-Component%202.png"
+          content="https://bk-personal-website.onrender.com/files/2ef40620657629387eece3862dbca8f1-Component%202.png"
         />
         <meta property="og:description" content="Hi! I'm João, come talking with me..." />
       </Head>
