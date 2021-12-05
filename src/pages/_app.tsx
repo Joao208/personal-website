@@ -9,6 +9,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="Full Stack, Dev, Programador, Backend, Web, Frontend" />
         <meta name="author" content="João Augusto (joao208)" />
 
+        <title>João Augusto</title>
+
         <meta property="og:title" content="João Augusto" />
         <meta
           property="og:image"
