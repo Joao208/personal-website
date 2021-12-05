@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import { getPosts } from 'src/services'
 import { Loading } from '@/components/Loading'
 import { Footer } from '@/components/footer'
+import { useLanguage } from '../../language'
 
 interface PostInterface {
   title: string
@@ -24,29 +25,23 @@ const BlogPage = () => {
   const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '' })
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
-  const [showSubscribe, setShowSubscribe] = useState(false)
+  const { lang } = useLanguage()
 
   const { pageId } = router.query
 
   useEffect(() => {
     const loadPosts = async () => {
       setLoading(true)
-      const response = await getPosts(pageId)
-      const allPosts = await getPosts()
+      const response = await getPosts(lang, pageId)
+      const allPosts = await getPosts(lang)
 
       setPost(response)
       setPosts(allPosts)
       setLoading(false)
-
-      if (!localStorage.getItem('already_subscribed')) {
-        setTimeout(() => {
-          setShowSubscribe(true)
-        }, 300)
-      }
     }
 
     loadPosts()
-  }, [pageId])
+  }, [lang, pageId])
 
   return (
     <>
@@ -78,14 +73,8 @@ const BlogPage = () => {
             {post.markdown}
           </ReactMarkdown>
         </S.ContainerMarkdown>
+        <Footer />
       </Container>
-      <Footer
-        display={showSubscribe}
-        onClickOutside={() => {
-          setShowSubscribe(false)
-          localStorage.setItem('already_subscribed', 'true')
-        }}
-      />
     </>
   )
 }

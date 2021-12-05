@@ -1,62 +1,22 @@
-import styled, { css } from 'styled-components'
-import { ContainerInterface } from './components'
+import styled from 'styled-components'
 
-const invisible = css`
-  display: none;
-`
-
-export const ContainerOutSide = styled.div<ContainerInterface>`
-  position: fixed;
-
-  cursor: pointer;
-
-  ${({ display }) => !display && invisible}
-
-  background: rgba(0, 0, 0, 0.5);
-
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
-`
-
-export const Container = styled.div<ContainerInterface>`
-  background: #1c2c35;
+export const Container = styled.div`
+  background: transparent;
   height: 300px;
 
-  position: fixed;
   z-index: 100;
 
   padding: 20px;
 
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  animation-duration: 1.5s;
-  animation-name: slidein;
-
-  @keyframes slidein {
-    from {
-      margin-bottom: -100%;
-      width: 300%;
-    }
-
-    to {
-      margin-bottom: 0%;
-      width: 100%;
-    }
-  }
-
-  ${({ display }) => !display && invisible}
+  padding-left: 50px;
 
   @media (max-width: 800px) {
+    padding-left: 20px;
+
     height: 50%;
 
     flex-direction: column;
     display: flex;
-
-    ${({ display }) => !display && invisible}
 
     justify-content: center;
     align-items: center;
