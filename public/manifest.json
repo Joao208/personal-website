@@ -1,0 +1,10 @@
+{
+    "name": "João Augusto",
+    "short_name": "joaobarros.blog",
+    "description": "Hi! I'm João, come talking with me...",
+    "orientation": "portrait-primary",
+    "start_url": "../../index.html",
+    "display": "standalone",
+    "background_color": "#1C2A34",
+    "theme_color": "#1C2A34"
+  }
