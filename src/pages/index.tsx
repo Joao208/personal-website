@@ -1,9 +1,12 @@
 import { Header } from '@/components/HeaderComponent'
 import Link from 'next/link'
+import { useLanguage } from 'src/languages/hooks'
 
 import * as S from '../components/home/styles'
 
 const Home = () => {
+  const { text } = useLanguage()
+
   return (
     <>
       <S.Container>
@@ -11,21 +14,23 @@ const Home = () => {
         <S.Image src="/home.png" />
         <S.Content>
           <S.Title>
-            Hey there 👋 <br />I am João
+            {text.title[0]} <br />
+            {text.title[1]}
           </S.Title>
           <S.Paragraph>
-            I am a passionate full-stack developer. My passion is to develop
+            {text.paragraph[0]}
             <br />
-            complete and complex software with increasing challenges. <br />I created sophisticated applications with amazing
-            architectures <br />
-            from scratch.
+            {text.paragraph[1]} <br />
+            {text.paragraph[2]}
+            {text.paragraph[3]} <br />
+            {text.paragraph[4]}
           </S.Paragraph>
           <S.ButtonContainer>
             <Link href="/" passHref>
-              <S.ButtonGreen>Contact</S.ButtonGreen>
+              <S.ButtonGreen>{text.buttonGreen}</S.ButtonGreen>
             </Link>
             <Link href="/projects" passHref>
-              <S.ButtonGray>Let’s see projects</S.ButtonGray>
+              <S.ButtonGray>{text.buttonGray}</S.ButtonGray>
             </Link>
           </S.ButtonContainer>
         </S.Content>

@@ -22,7 +22,7 @@ export const Title = styled.p`
 
 export const Card = styled.div`
   width: 242px;
-  height: 337px;
+  height: 285px;
 
   cursor: pointer;
 

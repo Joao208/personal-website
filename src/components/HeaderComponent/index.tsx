@@ -2,18 +2,21 @@ import React from 'react'
 import Link from 'next/link'
 import * as S from './styles'
 import { HeaderComponentInterface } from './components'
+import { useLanguage } from 'src/languages/hooks'
 
 export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute }) => {
+  const { text, lang } = useLanguage()
+
   const children = (
     <div>
-      <Link href="/" passHref>
-        <S.ButtonHeader active={page === 'home'}>Home</S.ButtonHeader>
+      <Link href={`/?lang=${lang}`} passHref>
+        <S.ButtonHeader active={page === 'home'}>{text.home}</S.ButtonHeader>
       </Link>
-      <Link href="/projects" passHref>
-        <S.ButtonHeader active={page === 'projects'}>Projects</S.ButtonHeader>
+      <Link href={`/projects?lang=${lang}`} passHref>
+        <S.ButtonHeader active={page === 'projects'}>{text.project}</S.ButtonHeader>
       </Link>
-      <Link href="/blog" passHref>
-        <S.ButtonHeader active={['blog', 'blog-page'].includes(page)}>Blog</S.ButtonHeader>
+      <Link href={`/blog?lang=${lang}`} passHref>
+        <S.ButtonHeader active={['blog', 'blog-page'].includes(page)}>{text.blog}</S.ButtonHeader>
       </Link>
     </div>
   )

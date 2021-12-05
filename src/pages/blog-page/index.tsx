@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import { getPosts } from 'src/services'
 import { Loading } from '@/components/Loading'
 import { Footer } from '@/components/footer'
+import { useLanguage } from 'src/languages/hooks'
 
 interface PostInterface {
   title: string
@@ -25,16 +26,17 @@ const BlogPage = () => {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
   const [showSubscribe, setShowSubscribe] = useState(false)
+  const { lang } = useLanguage()
 
   const { pageId } = router.query
 
   useEffect(() => {
     const loadPosts = async () => {
       setLoading(true)
-      const response = await getPosts(pageId)
-      const allPosts = await getPosts()
+      const response = await getPosts(lang, pageId)
+      const allPosts = await getPosts(lang)
 
-      setPost(response)
+      if (response) setPost(response)
       setPosts(allPosts)
       setLoading(false)
 
@@ -46,7 +48,7 @@ const BlogPage = () => {
     }
 
     loadPosts()
-  }, [pageId])
+  }, [pageId, lang])
 
   return (
     <>
@@ -75,7 +77,7 @@ const BlogPage = () => {
               },
             }}
           >
-            {post.markdown}
+            {post?.markdown}
           </ReactMarkdown>
         </S.ContainerMarkdown>
       </Container>
