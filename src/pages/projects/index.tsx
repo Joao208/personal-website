@@ -3,23 +3,25 @@ import { Loading } from '@/components/Loading'
 import { useEffect, useState } from 'react'
 import { getProjects } from 'src/services'
 import { Container } from '../../components/home/styles'
-import * as S from '../../components/projects/styles'
+import * as S from '../../components/blog/styles'
+import { useLanguage } from 'src/languages/hooks'
 
 const Projects = () => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(false)
+  const { lang } = useLanguage()
 
   useEffect(() => {
     const loadPosts = async () => {
       setLoading(true)
-      const response = await getProjects()
+      const response = await getProjects(lang)
 
       setProjects(response)
       setLoading(false)
     }
 
     loadPosts()
-  }, [])
+  }, [lang])
 
   return (
     <>
