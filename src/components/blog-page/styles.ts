@@ -50,10 +50,6 @@ export const ContainerMarkdown = styled.div`
     width: 100%;
   }
 
-  ul {
-    list-style: inside;
-  }
-
   * {
     @media (color) {
       background: transparent !important;
@@ -70,12 +66,27 @@ export const ContainerMarkdown = styled.div`
     font-weight: 500;
   }
 
+  p {
+    line-height: calc(1em + 1ex);
+  }
+
   > * ::marker {
     color: #fff;
   }
 
   > * {
     color: #ffffff;
+  }
+
+  li {
+    overflow-x: visible;
+  }
+
+  blockquote {
+    padding: 0 1em;
+    border-left: 0.25em solid #dfe2e5;
+
+    margin: 15px 0;
   }
 
   > pre {
