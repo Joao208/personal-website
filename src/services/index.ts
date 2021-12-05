@@ -5,9 +5,9 @@ export const api = axios.create({
   timeout: 30000,
 })
 
-export const getPosts = async (pageId?: string | string[] | undefined) => {
+export const getPosts = async (lang: string, pageId?: string | string[] | undefined) => {
   try {
-    const response = await api.get(`/posts?pageId=${pageId}`)
+    const response = await api.get(`/posts?pageId=${pageId}&lang=${lang}`)
 
     return response?.data
   } catch (error) {
@@ -16,9 +16,9 @@ export const getPosts = async (pageId?: string | string[] | undefined) => {
   }
 }
 
-export const getProjects = async () => {
+export const getProjects = async (lang: string) => {
   try {
-    const response = await api.get(`/projects`)
+    const response = await api.get(`/projects?lang=${lang}`)
 
     return response?.data
   } catch (error) {

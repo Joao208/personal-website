@@ -12,7 +12,7 @@ const Timeline: React.FC<TimelineInterface> = ({ posts }) => {
 
   return (
     <S.Wrapper>
-      {[...posts].reverse().map(({ createdAt, title, description, id }) => (
+      {posts.map(({ createdAt, title, description, id }) => (
         <Link key={id} href={`/blog-page?pageId=${id}`} passHref>
           <S.CardContainer>
             <S.Time>{moment(createdAt).format('LL')}</S.Time>
