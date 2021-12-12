@@ -9,6 +9,8 @@ export const Header = styled.div`
   width: 100%;
 
   > div {
+    align-items: center;
+
     width: 50%;
 
     display: flex;
@@ -43,4 +45,14 @@ export const ButtonHeader = styled.div<ButtonHeaderInterface>`
     css`
       border-bottom: 2px solid #fff;
     `}
+`
+
+export const Image = styled.img`
+  width: 32px;
+
+  cursor: pointer;
+
+  @media (max-width: 800px) {
+    width: 28px;
+  }
 `

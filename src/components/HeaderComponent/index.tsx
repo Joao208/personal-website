@@ -5,7 +5,9 @@ import { HeaderComponentInterface } from './components'
 import { useLanguage } from 'src/languages/hooks'
 
 export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute }) => {
-  const { text, lang } = useLanguage()
+  const { text, lang, pathname } = useLanguage()
+
+  const opposite = { pt: 'en', en: 'pt' } as { [key: string]: string }
 
   const children = (
     <div>
@@ -18,6 +20,10 @@ export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute })
       <Link href={`/blog?lang=${lang}`} passHref>
         <S.ButtonHeader active={['blog', 'blog-page'].includes(page)}>{text.blog}</S.ButtonHeader>
       </Link>
+      <S.Image
+        onClick={() => (window.location.href = `${pathname}?lang=${opposite[lang]}`)}
+        src={`languages/${opposite[lang]}.png`}
+      />
     </div>
   )
 
