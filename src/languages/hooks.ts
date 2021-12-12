@@ -15,7 +15,10 @@ interface ILanguage {
 
 export const useLanguage = () => {
   const router = useRouter()
-  const { lang = 'en' } = router.query as { lang: string }
+
+  const { query, pathname } = router
+
+  const { lang = 'en' } = query as { lang: string }
   const obj = { pt, en } as { [key: string]: ILanguage }
 
   const text = obj[lang] ?? en
@@ -24,5 +27,5 @@ export const useLanguage = () => {
     if (lang && !['pt', 'en'].includes(lang)) window.location.search = '?lang=en'
   }, [lang])
 
-  return { text, lang }
+  return { text, lang, pathname }
 }
