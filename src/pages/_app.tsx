@@ -15,10 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta property="og:url" content="URL" />
         <meta property="og:title" content="TÍTULO" />
-        <meta
-          property="og:image"
-          content="https://joaobarros.s3.us-east-2.amazonaws.com/2ef40620657629387eece3862dbca8f1-Component+2.png"
-        />
+        <meta property="og:image" content="https://joaobarros.s3.us-east-2.amazonaws.com/Component+1.png" />
         <meta property="og:description" content="DESCRIÇÃO" />
         <meta name="theme-color" content="#fe2813" />
         <meta property="business:contact_data:country_name" content="PAÍS" />
@@ -29,10 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:description" content="DESCRIÇÃO" />
         <meta name="twitter:title" content="TITULO" />
-        <meta
-          name="twitter:image"
-          content="https://joaobarros.s3.us-east-2.amazonaws.com/2ef40620657629387eece3862dbca8f1-Component+2.png"
-        />
+        <meta name="twitter:image" content="https://joaobarros.s3.us-east-2.amazonaws.com/Component+1.png" />
         <meta name="geo.placename" content="LOCALIZAÇÃO" />
         <meta name="geo.region" content="BR" />
         <meta name="description" content="DESCRIÇÃO" />
