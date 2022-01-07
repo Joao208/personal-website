@@ -9,7 +9,7 @@ import { useLanguage } from 'src/languages/hooks'
 const Projects = () => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(false)
-  const { lang } = useLanguage()
+  const { lang, text } = useLanguage()
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -28,7 +28,7 @@ const Projects = () => {
       {loading && <Loading />}
       <Container>
         <Header page="projects" />
-        <S.Title>What i’ve done</S.Title>
+        <S.Title>{text.projectTitle}</S.Title>
         <S.FlexWrapper>
           {projects.map(({ title, description, gitLink, cover, id }) => (
             <a key={id} target="_blank" href={gitLink} rel="noreferrer">

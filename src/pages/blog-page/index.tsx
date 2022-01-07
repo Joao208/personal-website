@@ -32,9 +32,8 @@ const BlogPage = () => {
   useEffect(() => {
     const loadPosts = async () => {
       setLoading(true)
-      const response = await getPosts(lang, pageId)
+      const response = pageId && (await getPosts(lang, pageId))
       const allPosts = await getPosts(lang)
-
       if (response) setPost(response)
       setPosts(allPosts)
       setLoading(false)

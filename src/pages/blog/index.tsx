@@ -12,7 +12,7 @@ import { useLanguage } from 'src/languages/hooks'
 const Blog = () => {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
-  const { lang } = useLanguage()
+  const { lang, text } = useLanguage()
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -31,7 +31,7 @@ const Blog = () => {
       {loading && <Loading />}
       <Container>
         <Header page="blog" />
-        <S.Title>knowledge I want to pass on</S.Title>
+        <S.Title>{text.blogTitle}</S.Title>
         <S.FlexWrapper>
           {posts.map(({ title, description, id, cover }) => (
             <Link key={id} href={`/blog-page?pageId=${id}`} passHref>

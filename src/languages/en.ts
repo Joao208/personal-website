@@ -12,4 +12,6 @@ export const en = {
   home: 'Home',
   project: 'Projects',
   blog: 'Blog',
+  blogTitle: 'knowledge I want to pass on',
+  projectTitle: 'What i’ve done',
 }
