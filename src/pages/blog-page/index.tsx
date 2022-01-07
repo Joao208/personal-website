@@ -1,5 +1,4 @@
-import { Container } from '../../components/home/styles'
-import * as S from '../../components/blog-page/styles'
+import Head from 'next/head'
 
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -12,6 +11,9 @@ import { getPosts } from 'src/services'
 import { Loading } from '@/components/Loading'
 import { Footer } from '@/components/footer'
 import { useLanguage } from 'src/languages/hooks'
+import { Container } from '../../components/home/styles'
+import * as S from '../../components/blog-page/styles'
+import useOpenGraphImage from 'src/utils/use-open-graph-image'
 
 interface PostInterface {
   title: string
@@ -26,6 +28,7 @@ const BlogPage = () => {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
   const { lang } = useLanguage()
+  const { imageURL } = useOpenGraphImage()
 
   const { pageId } = router.query
 
@@ -44,6 +47,13 @@ const BlogPage = () => {
 
   return (
     <>
+      <Head>
+        <title>João Augusto - {post?.title}</title>
+        <meta name="description" content={post?.subtitle} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={imageURL} />
+      </Head>
       {loading && <Loading />}
       <Container>
         <Header page="blog-page" />
