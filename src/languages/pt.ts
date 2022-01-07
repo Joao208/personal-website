@@ -12,4 +12,6 @@ export const pt = {
   home: 'Início',
   project: 'Projetos',
   blog: 'Blog',
+  blogTitle: 'Conhecimentos que quero passar',
+  projectTitle: 'O que já fiz',
 }

@@ -11,6 +11,8 @@ interface ILanguage {
   home: string
   project: string
   blog: string
+  blogTitle: string
+  projectTitle: string
 }
 
 export const useLanguage = () => {

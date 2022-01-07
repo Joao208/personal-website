@@ -2,13 +2,11 @@ import styled, { css } from 'styled-components'
 import { CardInterface } from './components'
 
 export const Wrapper = styled.div`
-  position: absolute;
-
-  height: 500px;
+  position: fixed;
   width: 250px;
-
   right: 0px;
   top: 80px;
+  bottom: 20px;
 
   ::-webkit-scrollbar {
     width: 0px;
