@@ -14,6 +14,20 @@ import { getPosts } from 'src/services'
 import { Loading } from '@/components/Loading'
 import { Footer } from '@/components/footer'
 import { useLanguage } from 'src/languages/hooks'
+import { GetServerSidePropsContext } from 'next'
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const pageId = context.query.pageId
+
+  const response = await getPosts('en', pageId)
+
+  return {
+    props: {
+      response,
+      batata: 'batata',
+    },
+  }
+}
 
 interface PostInterface {
   title: string
@@ -23,7 +37,7 @@ interface PostInterface {
   cover: string
 }
 
-const BlogPage = () => {
+const BlogPage = ({ response }: { response: PostInterface }) => {
   const router = useRouter()
   const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '', cover: '' })
   const [posts, setPosts] = useState([])
@@ -48,13 +62,19 @@ const BlogPage = () => {
   return (
     <>
       <Head>
-        <title>{post?.title}</title>
+        <title>{response?.title || post?.title}</title>
 
-        <meta property="og:title" content={post?.title} />
-        <meta property="og:image" content={post?.cover} />
-        <meta property="og:description" content={post?.subtitle} />
+        <meta property="og:title" content={response?.title || post?.title} />
+        <meta property="og:image" content={response?.cover || post?.cover} />
+        <meta property="og:description" content={response?.subtitle || post?.subtitle} />
         <meta property="og:site_name" content="João Augusto - Software Engineer" />
         <meta property="og:type" content="article" />
+
+        <meta prefix="og: http://ogp.me/ns#" property="og:title" content={response?.title || post?.title} />
+        <meta prefix="og: http://ogp.me/ns#" property="og:image" content={response?.cover || post?.cover} />
+        <meta prefix="og: http://ogp.me/ns#" property="og:description" content={response?.subtitle || post?.subtitle} />
+        <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="João Augusto - Software Engineer" />
+        <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article" />
       </Head>
       {loading && <Loading />}
       <Container>
