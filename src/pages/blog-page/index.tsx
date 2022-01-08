@@ -82,7 +82,7 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
         <meta property="article:author" content="João Barros" />
         <meta property="article:section" content="Technology" />
 
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta prefix="og: http://ogp.me/ns#" name="twitter:card" content="summary_large_image" />
       </Head>
 
       {loading && <Loading />}
