@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import { Container } from '../../components/home/styles'
 import { Header } from '@/components/HeaderComponent'
 
@@ -36,16 +34,20 @@ const Blog = () => {
         <S.Title>{text.blogTitle}</S.Title>
         <S.FlexWrapper>
           {posts.map(({ title, description, id, cover }) => (
-            <Link key={id} href={`/blog-page?pageId=${id}`} passHref>
-              <S.Card>
-                <S.CardImage src={cover} />
-                <S.ContainerText>
-                  <S.CardTitle>{title}</S.CardTitle>
-                  <S.CardDescription>{description}</S.CardDescription>
-                  <S.CardButton></S.CardButton>
-                </S.ContainerText>
-              </S.Card>
-            </Link>
+            <S.Card
+              key={id}
+              onClick={() => {
+                setLoading(true)
+                window.location.href = `/blog-page?pageId=${id}`
+              }}
+            >
+              <S.CardImage src={cover} />
+              <S.ContainerText>
+                <S.CardTitle>{title}</S.CardTitle>
+                <S.CardDescription>{description}</S.CardDescription>
+                <S.CardButton></S.CardButton>
+              </S.ContainerText>
+            </S.Card>
           ))}
         </S.FlexWrapper>
       </Container>
