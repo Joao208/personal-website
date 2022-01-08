@@ -1,10 +1,12 @@
+import { useEffect, useState } from 'react'
+
 import { Header } from '@/components/HeaderComponent'
 import { Loading } from '@/components/Loading'
-import { useEffect, useState } from 'react'
 import { getProjects } from 'src/services'
 import { Container } from '../../components/home/styles'
 import * as S from '../../components/blog/styles'
 import { useLanguage } from 'src/languages/hooks'
+import { DefaultHead } from '@/components/DefaultHead'
 
 const Projects = () => {
   const [projects, setProjects] = useState([])
@@ -25,6 +27,7 @@ const Projects = () => {
 
   return (
     <>
+      <DefaultHead />
       {loading && <Loading />}
       <Container>
         <Header page="projects" />

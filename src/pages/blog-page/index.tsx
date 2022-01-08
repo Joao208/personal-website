@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Container } from '../../components/home/styles'
 import * as S from '../../components/blog-page/styles'
 
@@ -12,17 +14,32 @@ import { getPosts } from 'src/services'
 import { Loading } from '@/components/Loading'
 import { Footer } from '@/components/footer'
 import { useLanguage } from 'src/languages/hooks'
+import { GetServerSidePropsContext } from 'next'
+import { RenderHead } from '@/components/DefaultHead/renderHead'
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const pageId = context.query.pageId
+
+  const response = await getPosts('en', pageId)
+
+  return {
+    props: {
+      response,
+    },
+  }
+}
 
 interface PostInterface {
   title: string
   description: string
   markdown: string
   subtitle: string
+  cover: string
 }
 
-const BlogPage = () => {
+const BlogPage = ({ response }: { response: PostInterface }) => {
   const router = useRouter()
-  const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '' })
+  const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '', cover: '' })
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
   const { lang } = useLanguage()
@@ -32,9 +49,9 @@ const BlogPage = () => {
   useEffect(() => {
     const loadPosts = async () => {
       setLoading(true)
-      const response = pageId && (await getPosts(lang, pageId))
+      const responsePost = pageId && (await getPosts(lang, pageId))
       const allPosts = await getPosts(lang)
-      if (response) setPost(response)
+      if (responsePost) setPost(responsePost)
       setPosts(allPosts)
       setLoading(false)
     }
@@ -44,6 +61,16 @@ const BlogPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{response?.title || post?.title}</title>
+
+        <RenderHead
+          titleComplete={response?.title || post?.title}
+          image={response?.cover || post?.cover}
+          description={response?.subtitle || post?.subtitle}
+        />
+      </Head>
+
       {loading && <Loading />}
       <Container>
         <Header page="blog-page" />

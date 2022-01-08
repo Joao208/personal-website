@@ -1,5 +1,7 @@
-import { Header } from '@/components/HeaderComponent'
 import Link from 'next/link'
+
+import { DefaultHead } from '@/components/DefaultHead'
+import { Header } from '@/components/HeaderComponent'
 import { useLanguage } from 'src/languages/hooks'
 
 import * as S from '../components/home/styles'
@@ -9,6 +11,7 @@ const Home = () => {
 
   return (
     <>
+      <DefaultHead />
       <S.Container>
         <Header page="home" isAbsolute />
         <S.Image src="/home.png" />

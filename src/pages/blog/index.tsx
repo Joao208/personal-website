@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { getPosts } from 'src/services'
 import { Loading } from '@/components/Loading'
 import { useLanguage } from 'src/languages/hooks'
+import { DefaultHead } from '@/components/DefaultHead'
 
 const Blog = () => {
   const [posts, setPosts] = useState([])
@@ -28,6 +29,7 @@ const Blog = () => {
 
   return (
     <>
+      <DefaultHead />
       {loading && <Loading />}
       <Container>
         <Header page="blog" />
