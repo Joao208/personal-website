@@ -24,7 +24,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: {
       response,
-      batata: 'batata',
     },
   }
 }
@@ -66,6 +65,8 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
 
         <meta property="og:title" content={response?.title || post?.title} />
         <meta property="og:image" content={response?.cover || post?.cover} />
+        <meta property="og:image:width" content="484" />
+        <meta property="og:image:height" content="196" />
         <meta property="og:description" content={response?.subtitle || post?.subtitle} />
         <meta property="og:site_name" content="João Augusto - Software Engineer" />
         <meta property="og:type" content="article" />
@@ -75,6 +76,8 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
         <meta prefix="og: http://ogp.me/ns#" property="og:description" content={response?.subtitle || post?.subtitle} />
         <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="João Augusto - Software Engineer" />
         <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article" />
+        <meta prefix="og: http://ogp.me/ns#" property="og:image:width" content="484" />
+        <meta prefix="og: http://ogp.me/ns#" property="og:image:height" content="196" />
       </Head>
       {loading && <Loading />}
       <Container>
