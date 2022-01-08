@@ -38,7 +38,7 @@ const Blog = () => {
               key={id}
               onClick={() => {
                 setLoading(true)
-                window.location.href = `/blog-page?pageId=${id}`
+                window.location.href = `/blog-page/${id}`
               }}
             >
               <S.CardImage src={cover} />
