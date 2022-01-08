@@ -62,18 +62,13 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
   return (
     <>
       <Head>
+        <title>{response?.title || post?.title}</title>
+
         <RenderHead
           titleComplete={response?.title || post?.title}
-          title={response?.title || post?.title}
           image={response?.cover || post?.cover}
           description={response?.subtitle || post?.subtitle}
         />
-
-        <meta property="og:image:width" content="1484" />
-        <meta property="og:image:height" content="1200" />
-
-        <meta prefix="og: http://ogp.me/ns#" property="og:image:width" content="1484" />
-        <meta prefix="og: http://ogp.me/ns#" property="og:image:height" content="1200" />
       </Head>
 
       {loading && <Loading />}
