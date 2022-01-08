@@ -1,7 +1,7 @@
 {
     "name": "João Augusto",
     "short_name": "joaobarros.blog",
-    "description": "Hi! I'm João, come talking with me...",
+    "description": "Hi, I'm João! Join my Blog to see my tutorials and my stories",
     "orientation": "portrait-primary",
     "start_url": "../../index.html",
     "display": "standalone",

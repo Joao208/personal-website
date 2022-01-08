@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { Container } from '../../components/home/styles'
 import { Header } from '@/components/HeaderComponent'
@@ -28,6 +29,15 @@ const Blog = () => {
 
   return (
     <>
+      <Head>
+        <title>João Augusto</title>
+
+        <meta property="og:title" content="João Augusto - Software Engineer" />
+        <meta property="og:image" content="https://joaobarros.s3.us-east-2.amazonaws.com/Component+1.png" />
+        <meta property="og:description" content="Hi, I'm João! Join my Blog to see my tutorials and my stories" />
+        <meta property="og:site_name" content="João Augusto" />
+        <meta property="og:type" content="website" />
+      </Head>
       {loading && <Loading />}
       <Container>
         <Header page="blog" />

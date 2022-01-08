@@ -1,6 +1,8 @@
+import Head from 'next/head'
+import { useEffect, useState } from 'react'
+
 import { Header } from '@/components/HeaderComponent'
 import { Loading } from '@/components/Loading'
-import { useEffect, useState } from 'react'
 import { getProjects } from 'src/services'
 import { Container } from '../../components/home/styles'
 import * as S from '../../components/blog/styles'
@@ -25,6 +27,15 @@ const Projects = () => {
 
   return (
     <>
+      <Head>
+        <title>João Augusto</title>
+
+        <meta property="og:title" content="João Augusto - Software Engineer" />
+        <meta property="og:image" content="https://joaobarros.s3.us-east-2.amazonaws.com/Component+1.png" />
+        <meta property="og:description" content="Hi, I'm João! Join my Blog to see my tutorials and my stories" />
+        <meta property="og:site_name" content="João Augusto" />
+        <meta property="og:type" content="website" />
+      </Head>
       {loading && <Loading />}
       <Container>
         <Header page="projects" />

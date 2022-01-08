@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Container } from '../../components/home/styles'
 import * as S from '../../components/blog-page/styles'
 
@@ -18,11 +20,12 @@ interface PostInterface {
   description: string
   markdown: string
   subtitle: string
+  cover: string
 }
 
 const BlogPage = () => {
   const router = useRouter()
-  const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '' })
+  const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '', cover: '' })
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
   const { lang } = useLanguage()
@@ -44,6 +47,15 @@ const BlogPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{post?.title}</title>
+
+        <meta property="og:title" content={post?.title} />
+        <meta property="og:image" content={post?.cover} />
+        <meta property="og:description" content={post?.subtitle} />
+        <meta property="og:site_name" content="João Augusto - Software Engineer" />
+        <meta property="og:type" content="article" />
+      </Head>
       {loading && <Loading />}
       <Container>
         <Header page="blog-page" />
