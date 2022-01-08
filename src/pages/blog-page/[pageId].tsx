@@ -7,29 +7,16 @@ import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import remarkGfm from 'remark-gfm'
 import { Header } from '@/components/HeaderComponent'
-import { useRouter } from 'next/router'
 import Timeline from '@/components/timeline'
-import { useEffect, useState } from 'react'
 import { getPosts } from 'src/services'
-import { Loading } from '@/components/Loading'
 import { Footer } from '@/components/footer'
-import { useLanguage } from 'src/languages/hooks'
-import { GetServerSidePropsContext } from 'next'
+import { GetStaticPropsContext } from 'next'
 import { RenderHead } from '@/components/DefaultHead/renderHead'
+import { useRouter } from 'next/router'
+import { Loading } from '@/components/Loading'
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const pageId = context.query.pageId
-
-  const response = await getPosts('en', pageId)
-
-  return {
-    props: {
-      response,
-    },
-  }
-}
-
-interface PostInterface {
+export interface PostInterface {
+  id: string
   title: string
   description: string
   markdown: string
@@ -38,54 +25,30 @@ interface PostInterface {
   createdAt: string
 }
 
-const BlogPage = ({ response }: { response: PostInterface }) => {
-  const router = useRouter()
-  const [post, setPost] = useState<PostInterface>({
-    title: '',
-    description: '',
-    markdown: '',
-    subtitle: '',
-    cover: '',
-    createdAt: '',
-  })
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(false)
-  const { lang } = useLanguage()
+interface BlogPageInterface {
+  posts: PostInterface[]
+  post: PostInterface
+}
 
-  const { pageId } = router.query
+const BlogPage: React.FC<BlogPageInterface> = ({ posts, post }) => {
+  const { isFallback } = useRouter()
 
-  useEffect(() => {
-    const loadPosts = async () => {
-      setLoading(true)
-      const responsePost = pageId && (await getPosts(lang, pageId))
-      const allPosts = await getPosts(lang)
-      if (responsePost) setPost(responsePost)
-      setPosts(allPosts)
-      setLoading(false)
-    }
-
-    loadPosts()
-  }, [pageId, lang])
+  if (isFallback) return <Loading />
 
   return (
     <>
       <Head>
-        <title>{response?.title || post?.title}</title>
+        <title>{post?.title}</title>
 
-        <RenderHead
-          titleComplete={response?.title || post?.title}
-          image={response?.cover || post?.cover}
-          description={response?.subtitle || post?.subtitle}
-        />
+        <RenderHead titleComplete={post?.title} image={post?.cover} description={post?.subtitle} />
 
-        <meta property="article:published_time" content={response?.createdAt || post?.createdAt} />
+        <meta property="article:published_time" content={post?.createdAt} />
         <meta property="article:author" content="João Barros" />
         <meta property="article:section" content="Technology" />
 
         <meta prefix="og: http://ogp.me/ns#" name="twitter:card" content="summary_large_image" />
       </Head>
 
-      {loading && <Loading />}
       <Container>
         <Header page="blog-page" />
         <Timeline posts={posts} />
@@ -114,10 +77,38 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
           </ReactMarkdown>
         </S.ContainerMarkdown>
         {/* <Reactions /> */}
-        <Footer loadingGlobal={loading} />
+        <Footer loadingGlobal={false} />
       </Container>
     </>
   )
 }
 
 export default BlogPage
+
+export async function getStaticPaths() {
+  const posts = await getPosts('en')
+
+  const paths = posts.map((post: PostInterface) => ({
+    params: { pageId: post.id },
+  }))
+
+  return {
+    paths,
+    fallback: true,
+  }
+}
+
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const pageId = params?.pageId
+
+  const posts = await getPosts('en')
+  const post = await getPosts('en', pageId)
+
+  return {
+    props: {
+      posts,
+      post,
+    },
+    revalidate: 1000,
+  }
+}
