@@ -12,6 +12,8 @@ import { getPosts } from 'src/services'
 import { Footer } from '@/components/footer'
 import { GetStaticPropsContext } from 'next'
 import { RenderHead } from '@/components/DefaultHead/renderHead'
+import { useRouter } from 'next/router'
+import { Loading } from '@/components/Loading'
 
 export interface PostInterface {
   id: string
@@ -29,6 +31,10 @@ interface BlogPageInterface {
 }
 
 const BlogPage: React.FC<BlogPageInterface> = ({ posts, post }) => {
+  const { isFallback } = useRouter()
+
+  if (isFallback) return <Loading />
+
   return (
     <>
       <Head>
@@ -88,7 +94,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 

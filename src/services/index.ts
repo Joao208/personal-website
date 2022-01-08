@@ -11,7 +11,6 @@ export const getPosts = async (lang: string, pageId?: string | string[] | undefi
 
     return response?.data
   } catch (error) {
-    console.log(error)
     return []
   }
 }
@@ -22,7 +21,6 @@ export const getProjects = async (lang: string) => {
 
     return response?.data
   } catch (error) {
-    console.log(error)
     return []
   }
 }
