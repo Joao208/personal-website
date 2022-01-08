@@ -15,6 +15,7 @@ import { Loading } from '@/components/Loading'
 import { Footer } from '@/components/footer'
 import { useLanguage } from 'src/languages/hooks'
 import { GetServerSidePropsContext } from 'next'
+import { RenderHead } from '@/components/DefaultHead/renderHead'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const pageId = context.query.pageId
@@ -61,24 +62,20 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
   return (
     <>
       <Head>
-        <title>{response?.title || post?.title}</title>
+        <RenderHead
+          titleComplete={response?.title || post?.title}
+          title={response?.title || post?.title}
+          image={response?.cover || post?.cover}
+          description={response?.subtitle || post?.subtitle}
+        />
 
-        <meta property="og:title" content={response?.title || post?.title} />
-        <meta property="og:image" content={response?.cover || post?.cover} />
-        <meta property="og:image:width" content="484" />
-        <meta property="og:image:height" content="196" />
-        <meta property="og:description" content={response?.subtitle || post?.subtitle} />
-        <meta property="og:site_name" content="João Augusto - Software Engineer" />
-        <meta property="og:type" content="article" />
+        <meta property="og:image:width" content="1484" />
+        <meta property="og:image:height" content="1200" />
 
-        <meta prefix="og: http://ogp.me/ns#" property="og:title" content={response?.title || post?.title} />
-        <meta prefix="og: http://ogp.me/ns#" property="og:image" content={response?.cover || post?.cover} />
-        <meta prefix="og: http://ogp.me/ns#" property="og:description" content={response?.subtitle || post?.subtitle} />
-        <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="João Augusto - Software Engineer" />
-        <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article" />
-        <meta prefix="og: http://ogp.me/ns#" property="og:image:width" content="484" />
-        <meta prefix="og: http://ogp.me/ns#" property="og:image:height" content="196" />
+        <meta prefix="og: http://ogp.me/ns#" property="og:image:width" content="1484" />
+        <meta prefix="og: http://ogp.me/ns#" property="og:image:height" content="1200" />
       </Head>
+
       {loading && <Loading />}
       <Container>
         <Header page="blog-page" />
