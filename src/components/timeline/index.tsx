@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import * as S from './style'
@@ -12,18 +13,15 @@ const Timeline: React.FC<TimelineInterface> = ({ posts }) => {
   return (
     <S.Wrapper>
       {posts.map(({ createdAt, title, description, id }) => (
-        <S.CardContainer
-          key={id}
-          onClick={() => {
-            window.location.href = `/blog-page/${id}`
-          }}
-        >
-          <S.Time>{moment(createdAt).format('LL')}</S.Time>
-          <S.Card selected={id == pageId}>
-            <S.CardTitle>{title}</S.CardTitle>
-            <S.Description>{description}</S.Description>
-          </S.Card>
-        </S.CardContainer>
+        <Link key={id} href={`/blog-page/${id}`} passHref>
+          <S.CardContainer>
+            <S.Time>{moment(createdAt).format('LL')}</S.Time>
+            <S.Card selected={id == pageId}>
+              <S.CardTitle>{title}</S.CardTitle>
+              <S.Description>{description}</S.Description>
+            </S.Card>
+          </S.CardContainer>
+        </Link>
       ))}
     </S.Wrapper>
   )

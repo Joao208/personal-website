@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute })
       </Link>
       <S.Image
         onClick={() => (window.location.href = `${pathname}?lang=${opposite[lang]}`)}
-        src={`languages/${opposite[lang]}.png`}
+        src={`/languages/${opposite[lang]}.png`}
       />
     </div>
   )
