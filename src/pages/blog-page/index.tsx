@@ -35,11 +35,19 @@ interface PostInterface {
   markdown: string
   subtitle: string
   cover: string
+  createdAt: string
 }
 
 const BlogPage = ({ response }: { response: PostInterface }) => {
   const router = useRouter()
-  const [post, setPost] = useState<PostInterface>({ title: '', description: '', markdown: '', subtitle: '', cover: '' })
+  const [post, setPost] = useState<PostInterface>({
+    title: '',
+    description: '',
+    markdown: '',
+    subtitle: '',
+    cover: '',
+    createdAt: '',
+  })
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
   const { lang } = useLanguage()
@@ -69,6 +77,12 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
           image={response?.cover || post?.cover}
           description={response?.subtitle || post?.subtitle}
         />
+
+        <meta property="article:published_time" content={response?.createdAt || post?.createdAt} />
+        <meta property="article:author" content="João Barros" />
+        <meta property="article:section" content="Technology" />
+
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       {loading && <Loading />}

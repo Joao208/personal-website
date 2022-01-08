@@ -6,13 +6,13 @@ interface RenderHeadInterface {
   type?: string
 }
 
-export const RenderHead = ({
+export const RenderHead: React.FC<RenderHeadInterface> = ({
   titleComplete,
   image,
   description,
   site_name = 'João Augusto',
   type = 'article',
-}: RenderHeadInterface) => {
+}) => {
   return (
     <>
       <meta property="og:title" content={titleComplete} />
