@@ -49,9 +49,9 @@ const BlogPage = ({ response }: { response: PostInterface }) => {
   useEffect(() => {
     const loadPosts = async () => {
       setLoading(true)
-      const response = pageId && (await getPosts(lang, pageId))
+      const responsePost = pageId && (await getPosts(lang, pageId))
       const allPosts = await getPosts(lang)
-      if (response) setPost(response)
+      if (responsePost) setPost(responsePost)
       setPosts(allPosts)
       setLoading(false)
     }
