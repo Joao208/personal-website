@@ -1,3 +1,4 @@
+import { PostInterface } from '@/pages/blog-page/[pageId]'
 import { InputHTMLAttributes } from 'react'
 
 export interface CardInterface extends InputHTMLAttributes<HTMLInputElement> {
@@ -5,7 +6,7 @@ export interface CardInterface extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export interface TimelineInterface extends InputHTMLAttributes<HTMLInputElement> {
-  posts: never[]
+  posts: PostInterface[]
 }
 
 export interface WrapperInterface extends InputHTMLAttributes<HTMLInputElement> {

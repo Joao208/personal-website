@@ -13,7 +13,7 @@ const Timeline: React.FC<TimelineInterface> = ({ posts }) => {
   return (
     <S.Wrapper telegram="timeline">
       {posts.map(({ createdAt, title, description, id }) => (
-        <Link key={id} href={`/blog-page?pageId=${id}`} passHref>
+        <Link key={id} href={`/blog-page/${id}`} passHref>
           <S.CardContainer>
             <S.Time>{moment(createdAt).format('LL')}</S.Time>
             <S.Card selected={id == pageId}>
