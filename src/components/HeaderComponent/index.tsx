@@ -10,7 +10,7 @@ export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute })
   const opposite = { pt: 'en', en: 'pt' } as { [key: string]: string }
 
   const children = (
-    <div>
+    <S.DivWrapper telegram="header">
       <Link href={`/?lang=${lang}`} passHref>
         <S.ButtonHeader active={page === 'home'}>{text.home}</S.ButtonHeader>
       </Link>
@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute })
         onClick={() => (window.location.href = `${pathname}?lang=${opposite[lang]}`)}
         src={`languages/${opposite[lang]}.png`}
       />
-    </div>
+    </S.DivWrapper>
   )
 
   if (isAbsolute) return <S.AbsoluteHeader>{children}</S.AbsoluteHeader>

@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
-import { ButtonHeaderInterface } from './components'
+import { ButtonHeaderInterface, WrapperInterface } from './components'
+
+export const DivWrapper = styled.div<WrapperInterface>``
 
 export const Header = styled.div`
   display: flex;

@@ -8,3 +8,7 @@ export interface HeaderComponentInterface extends InputHTMLAttributes<HTMLInputE
   page: string
   isAbsolute?: boolean
 }
+
+export interface WrapperInterface extends InputHTMLAttributes<HTMLInputElement> {
+  telegram?: string
+}

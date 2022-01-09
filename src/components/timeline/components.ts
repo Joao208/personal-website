@@ -7,3 +7,7 @@ export interface CardInterface extends InputHTMLAttributes<HTMLInputElement> {
 export interface TimelineInterface extends InputHTMLAttributes<HTMLInputElement> {
   posts: never[]
 }
+
+export interface WrapperInterface extends InputHTMLAttributes<HTMLInputElement> {
+  telegram?: string
+}
