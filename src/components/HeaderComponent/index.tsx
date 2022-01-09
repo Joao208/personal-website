@@ -10,7 +10,7 @@ export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute })
   const opposite = { pt: 'en', en: 'pt' } as { [key: string]: string }
 
   const children = (
-    <S.DivWrapper telegram="header">
+    <S.DivWrapper id="telegram:header">
       <Link href={`/?lang=${lang}`} passHref>
         <S.ButtonHeader active={page === 'home'}>{text.home}</S.ButtonHeader>
       </Link>

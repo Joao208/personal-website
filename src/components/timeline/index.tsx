@@ -11,7 +11,7 @@ const Timeline: React.FC<TimelineInterface> = ({ posts }) => {
   const { pageId } = router.query
 
   return (
-    <S.Wrapper telegram="timeline">
+    <S.Wrapper id="telegram:timeline">
       {posts.map(({ createdAt, title, description, id }) => (
         <Link key={id} href={`/blog-page/${id}`} passHref>
           <S.CardContainer>

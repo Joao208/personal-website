@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
-import { CardInterface, WrapperInterface } from './components'
+import { CardInterface } from './components'
 
-export const Wrapper = styled.div<WrapperInterface>`
+export const Wrapper = styled.div`
   position: fixed;
   width: 250px;
   right: 0px;
