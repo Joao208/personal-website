@@ -42,9 +42,9 @@ const BlogPage: React.FC<BlogPageInterface> = ({ posts, post }) => {
 
         <RenderHead titleComplete={post?.title} image={post?.cover} description={post?.subtitle} />
 
-        <meta property="article:published_time" content={post?.createdAt} />
-        <meta property="article:author" content="João Barros" />
-        <meta property="article:section" content="Technology" />
+        <meta prefix="og: http://ogp.me/ns#" property="article:published_time" content={post?.createdAt} />
+        <meta prefix="og: http://ogp.me/ns#" property="article:author" content="João Barros" />
+        <meta prefix="og: http://ogp.me/ns#" property="article:section" content="Technology" />
       </Head>
 
       <Container>
