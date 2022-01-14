@@ -39,14 +39,15 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@types/react-syntax-highlighter": "^13.5.2",
     "@swc/core": "^1.2.112",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
+    "@types/gtag.js": "^0.0.8",
     "@types/jest": "^27.0.3",
     "@types/node": "16.11.10",
     "@types/react": "17.0.37",
+    "@types/react-syntax-highlighter": "^13.5.2",
     "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
