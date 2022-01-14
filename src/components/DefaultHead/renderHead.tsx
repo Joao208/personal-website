@@ -32,6 +32,8 @@ export const RenderHead: React.FC<RenderHeadInterface> = ({
 
       <meta prefix="og: http://ogp.me/ns#" property="og:image:width" content="1484" />
       <meta prefix="og: http://ogp.me/ns#" property="og:image:height" content="1200" />
+
+      <meta prefix="og: http://ogp.me/ns#" name="twitter:card" content="summary_large_image" />
     </>
   )
 }

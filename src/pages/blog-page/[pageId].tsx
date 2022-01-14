@@ -45,8 +45,6 @@ const BlogPage: React.FC<BlogPageInterface> = ({ posts, post }) => {
         <meta property="article:published_time" content={post?.createdAt} />
         <meta property="article:author" content="João Barros" />
         <meta property="article:section" content="Technology" />
-
-        <meta prefix="og: http://ogp.me/ns#" name="twitter:card" content="summary_large_image" />
       </Head>
 
       <Container>
