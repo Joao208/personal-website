@@ -56,3 +56,7 @@ export const Image = styled.img`
     width: 28px;
   }
 `
+
+export const IconDiv = styled.div`
+  cursor: pointer;
+`

@@ -7,7 +7,7 @@ export const pt = {
     ' incríveis',
     'do zero',
   ],
-  buttonGreen: 'Contatos',
+  buttonGreen: 'Contato',
   buttonGray: 'Ver projetos',
   home: 'Início',
   project: 'Projetos',

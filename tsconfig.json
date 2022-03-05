@@ -18,10 +18,9 @@
     "paths": {
       "@/pages/*": ["src/pages/*"],
       "@/components/*": ["src/components/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/lib/*": ["src/lib/*"],
-    },
+      "@/styles/*": ["src/styles/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.tsx", "*.ts", "generators/plopfile.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.tsx", "*.ts"],
   "exclude": ["node_modules"]
 }
