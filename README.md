@@ -4,25 +4,8 @@
 ![Badge](https://img.shields.io/github/license/joao208/fe_personal_website)
 
 <h1>
-    <img src="images/Home.png">
+    <img src="images/Home.png" style="border-radius: 10px;">
 </h1>
-
-<h1>
-    <img src="images/Journey.png">
-</h1>
-
-<h1>
-    <img src="images/Projects.png">
-</h1>
-
-<h1>
-    <img src="images/Blog-1.png">
-</h1>
-
-<h1>
-    <img src="images/Blog.png">
-</h1>
-
 
 ## 🚀 Tecnologias utilizadas
 
@@ -30,6 +13,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - [NextJs](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
+
+## Links
+
+[Demo](https://joaobarros.blog)
+[Backend](https://github.com/Joao208/bk_personal_website)
 
 ---
 

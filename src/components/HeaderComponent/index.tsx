@@ -3,6 +3,7 @@ import Link from 'next/link'
 import * as S from './styles'
 import { HeaderComponentInterface } from './components'
 import { useLanguage } from 'src/languages/hooks'
+import { GithubIcon } from 'public/github'
 
 export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute }) => {
   const { text, lang, pathname } = useLanguage()
@@ -24,6 +25,9 @@ export const Header: React.FC<HeaderComponentInterface> = ({ page, isAbsolute })
         onClick={() => (window.location.href = `${pathname}?lang=${opposite[lang]}`)}
         src={`/languages/${opposite[lang]}.png`}
       />
+      <S.IconDiv onClick={() => window.open('https://github.com/Joao208/fe_personal_website', '_blank')}>
+        <GithubIcon />
+      </S.IconDiv>
     </div>
   )
 

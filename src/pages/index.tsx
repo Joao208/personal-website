@@ -29,9 +29,7 @@ const Home = () => {
             {text.paragraph[4]}
           </S.Paragraph>
           <S.ButtonContainer>
-            <Link href="/" passHref>
-              <S.ButtonGreen>{text.buttonGreen}</S.ButtonGreen>
-            </Link>
+            <S.ButtonGreen onClick={() => window.open('https://linktr.ee/joao208', '_blank')}>{text.buttonGreen}</S.ButtonGreen>
             <Link href="/projects" passHref>
               <S.ButtonGray>{text.buttonGray}</S.ButtonGray>
             </Link>
